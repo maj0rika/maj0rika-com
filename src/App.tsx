@@ -1,0 +1,264 @@
+import Hero from "./components/Hero";
+import { MascotPeek } from "./components/Swoosh";
+
+const bizagent = [
+  "1개월 PoC로 시작한 리걸 AI 제품의 프론트엔드를 단독 담당, 유료 엔터프라이즈 SaaS 확장 과정의 핵심 AI UX 설계·구현",
+  "법률 업무의 리서치·문서 확인·출처 검증·문서 생성을 LLM/RAG 기반 워크플로우로 전환하는 사용자 경험 제품화",
+  "SSE 기반 LLM/RAG 챗 UX — 답변 생성·출처 표시·후속 탐색과 중단/에러/완료 상태를 하나의 대화 흐름으로 통합",
+  "통합 검색: 조건 단위 캐싱 · in-flight Promise 병합 · URL 상태 동기화로 중복 요청 제거, 탭 전환 응답성 개선",
+  "사내 REF 링크 규격 + Markdown tokenizer 확장으로 답변 내 법령·문서 출처에서 원문 조항으로 이동하는 Citation UX 구현",
+  "PDF.js 뷰어에 가상 스크롤·스크롤 위치 동기화·OCR BBox 오버레이를 적용해 다중 페이지·스캔 문서 탐색 안정화",
+  "SSE 기반 워크플로우 상태 복구 · Canvas 문서 생성/편집 · DOCX/PDF export 플로우 구현",
+  "정규 릴리스 태깅 · FE 배포 · QA 사이클 · 핫픽스 대응으로 운영 제품 릴리스 안정성 개선",
+  "사내 변호사·기획·AI/BE 팀과 협업해 법률 실무 요구를 제품 UX로 구체화, AI→BE→FE 순차 배포·QA 진행을 정리·공유",
+];
+
+const migration = [
+  "운영 중인 SvelteKit 제품을 React + Vite + Turborepo 모노레포로 단계적 전환",
+  "Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영",
+  "라우팅·페이지 셸·i18n·hosted mode를 분리하며 기존 기능을 신규 React 구조로 재구성",
+  "golden evidence · parity smoke · 브라우저 기반 검증으로 SvelteKit ↔ React 패리티 검증, 핵심 화면 회귀 방지",
+  "반복 가능한 마이그레이션 패턴을 프롬프트 규칙 · 체크리스트 · 검증 절차로 표준화",
+];
+
+const workshop = [
+  {
+    head: "Claude · Codex · Cursor · OpenCode를 같이 굴립니다",
+    body:
+      "설계는 Claude(OMC), 구현은 Codex/OMX medium(가성비·속도 둘 다 좋아서 애용), 자잘한 건 Cursor Composer 2.5. 쿼터가 모자라면 OpenCode Go 같은 풀로 빠집니다. 한 도구에 매몰되지 않는 게 셋업의 기본 전제예요.",
+  },
+  {
+    head: "문제 크기에 맞춰 모델을 가릅니다",
+    body:
+      "복잡한 설계는 ralplan과 deep-interview로 깊게 파고, 가벼운 건 Codex 5.5 fast medium이나 Cursor Composer로 끊어요. 큰 모델에 작은 문제 던지는 게 시간·비용 양쪽에서 가장 큰 낭비라서요.",
+  },
+  {
+    head: "어디서 열어도 규칙·컨텍스트가 따라온다",
+    body:
+      "node_modules, .env, .mcp.json, 에이전트 메모리, 스킬 — worktree나 clone 사이에서 끊기면 짜증나잖아요. 심볼릭 링크로 묶어두면 어떤 도구로 들어가도 같은 셋업이 따라옵니다.",
+  },
+  {
+    head: "수정 전에 도미노부터 봅니다",
+    body:
+      "MCP로 심볼이랑 참조를 따라가서, 이 한 줄 고치면 어디까지 같이 깨지는지 먼저 확인해요. 큰 코드베이스에선 그게 회귀 막는 가장 싼 방법이거든요.",
+  },
+  {
+    head: "AI가 끝났다고 끝난 게 아닙니다",
+    body:
+      "결과물은 항상 사람이 한 번 더 봅니다. 회귀 두 번 안 맞으려고 테스트 코드는 무조건 같이 남기는 룰을 문서에 박아뒀어요. 최근엔 goal 기능으로 작업 목표를 미리 묶어두는 것도 같이 굴려보는 중.",
+  },
+];
+
+const builds = [
+  {
+    name: "AI 가계부",
+    tag: "운영 중",
+    desc:
+      "자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현. 웹+모바일 단일 코드베이스(Capacitor)로 운영.",
+    stack: "Next.js · Supabase · Capacitor · MiniMax / Fireworks / Kimi",
+    link: "https://household-account-book-tawny.vercel.app",
+    note: "테스트 계정 test@test.com / test1234",
+  },
+];
+
+const history = [
+  {
+    company: "BHSN — Frontend Engineer",
+    period: "2023.08 — 현재",
+    note: "Allibee Business Agent (리걸 AI SaaS) · CLM (계약 관리 솔루션). 위 본업 섹션 참조.",
+  },
+  {
+    company: "CodeRecipe — Frontend Developer",
+    period: "2022.02 — 2023.04",
+    note:
+      "물류 SaaS Logipasta Admin 실시간 미리보기 개편 (관련 기술지원 문의 50%+ 감소), 공통 UI 컴포넌트 설계. 뉴스 플랫폼 QNN24를 PHP → Vue3/Nuxt 전환, S3 Signed URL 업로드 · I'mport 결제 연동.",
+  },
+  {
+    company: "세라에스이 — Embedded Developer",
+    period: "2019.01 — 2022.02",
+    note:
+      "산업용 오일 센서 모니터링 펌웨어 · RFID 장비 개선 (특허 출원 참여). RFID 인식거리 개선으로 현대엘리베이터 납품.",
+  },
+];
+
+function SectionHead({ chapter, title }: { chapter: string; title: string }) {
+  return (
+    <header className="mb-10 grid gap-2 sm:mb-12 sm:grid-cols-[160px_1fr] sm:items-baseline sm:gap-8">
+      <span className="label-mono">{chapter}</span>
+      <h2 className="font-display text-2xl font-bold leading-tight tracking-[-0.012em] text-(--color-ink) sm:text-[2.1rem]" style={{ fontWeight: 700 }}>{title}</h2>
+    </header>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="min-h-dvh">
+      <Hero />
+
+      <main id="main-content" className="paper-grain relative bg-(--color-paper-2)" tabIndex={-1}>
+        {/* 본업 */}
+        <section id="bizagent" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
+          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" />
+          <p className="mb-3 max-w-[64ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
+            BHSN의 리걸 AI 에이전트예요. 2024년 7월부터 프론트엔드를 단독으로 담당해 왔습니다.
+            지금은 Agent 단독 유료 구독이 <strong className="font-semibold text-(--color-ink)">329개 워크스페이스</strong> · <strong className="font-semibold text-(--color-ink)">495개 라이선스</strong>. 참고로 Allibee 플랫폼 전체(Agent + CLM)는 누적 가입 <span className="text-(--color-ink-3)">2,767 워크스페이스 · 10,393 계정</span>이고, 위 Agent 숫자는 그중 유료 구독분입니다.
+            율촌·CJ 같은 엔터프라이즈 고객사에 납품하면서 들어오는 실사용 피드백은 가능한 한 SaaS 공통 기능으로 녹여 넣습니다. <span className="text-(--color-ink-3)">(2026.05 기준)</span>
+          </p>
+          <p className="mb-8 font-mono text-xs text-(--color-ink-3)">
+            데모 · <a className="quill-link" href="https://demo.allibee.ai" target="_blank" rel="noreferrer" aria-label="Business Agent 데모 (새 탭)">demo.allibee.ai</a> · 테스트 계정 dummy@dummy.com / testtest1!
+          </p>
+          <ul className="space-y-3 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">
+            {bizagent.map((b) => (
+              <li key={b} className="grid grid-cols-[auto_1fr] gap-x-3">
+                <span aria-hidden className="select-none text-(--color-moss)">—</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-12 border-t border-(--color-ink)/10 pt-8">
+            <h3 className="font-mono text-xs uppercase tracking-[0.24em] text-(--color-moss)">
+              · Business Agent React 마이그레이션 · 2026.04 — 현재
+            </h3>
+            <p className="mt-3 mb-4 max-w-[60ch] text-sm italic text-(--color-ink-3)">
+              전환 배경 — 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성.
+            </p>
+            <ul className="space-y-3 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">
+              {migration.map((b) => (
+                <li key={b} className="grid grid-cols-[auto_1fr] gap-x-3">
+                  <span aria-hidden className="select-none text-(--color-moss)">—</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* 작업장 / AX */}
+        <section id="workshop" className="bg-(--color-paper)">
+          <div className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
+            <SectionHead
+              chapter="ii · 공방 · AX"
+              title="AI 도구 셋업이 어쩌다 본업의 절반이 됐어요."
+            />
+            <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
+              한 AI 도구에 매몰되면 그 도구가 막히는 날이 작업이 멈추는 날이 됩니다. 그래서 도구를 일찍부터 분산하고, 규칙·컨텍스트·검증을 같은 표준으로 묶어서 굴려요.
+              <span className="block mt-2 text-(--color-ink-3)">(검색은 최근 Perplexity에서 Grok으로 갈아탔습니다 — 커뮤니티 기반 실시간성이 압도적이라서.)</span>
+            </p>
+            <ol className="space-y-9">
+              {workshop.map((w, i) => (
+                <li key={w.head} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
+                  <span className="num-display text-2xl text-(--color-moss-light) sm:text-3xl" aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h4 className="text-lg font-bold text-(--color-ink) sm:text-xl">{w.head}</h4>
+                    <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{w.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <aside className="mt-12 space-y-3 border-l-2 border-(--color-moss-light) pl-5 text-[0.95rem] leading-[1.8] text-(--color-ink-2)">
+              <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-(--color-moss)">
+                · 지금 실험 중 · 다음 시도
+              </p>
+              <p>
+                개인 맥미니에 학습형 에이전트 <strong className="font-semibold text-(--color-ink)">Hermes</strong>를 띄워 몇 주째 굴려보는 중입니다.
+                도구가 점점 나를 학습한다는 게 결국 가장 큰 변수라서, 다음 셋업의 방향이 거기서 나올 것 같아요.
+              </p>
+              <p>
+                <strong className="font-semibold text-(--color-ink)">Gemini 3.5 Flash</strong>랑 <strong className="font-semibold text-(--color-ink)">Antigravity CLI</strong>도 나왔지만, 3.5 Pro가 나오면 그때 넣어보려고 합니다 —
+                모델이 충분히 강해질 때까지 기다리는 것도 도구 선택의 일부라서요.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        {/* Side Projects */}
+        <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
+          <SectionHead chapter="iii · side" title="개인 프로젝트" />
+          <div className="space-y-10">
+            {builds.map((p, i) => (
+              <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
+                <div className="num-display text-2xl text-(--color-moss-light) sm:text-3xl">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <h3 className="text-xl font-bold text-(--color-ink) sm:text-2xl">{p.name}</h3>
+                    <span className="font-mono text-[11px] tracking-wider text-(--color-ink-3)">{p.tag}</span>
+                  </div>
+                  <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{p.desc}</p>
+                  <div className="mt-2 font-mono text-xs text-(--color-moss)">{p.stack}</div>
+                  {p.note && (
+                    <div className="mt-1 font-mono text-[11px] text-(--color-ink-3)">{p.note}</div>
+                  )}
+                  {p.link && (
+                    <a href={p.link} target="_blank" rel="noreferrer" className="quill-link mt-2 inline-block text-sm" aria-label={`${p.name} 라이브 사이트 (새 탭)`}>
+                      라이브 보기 →
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* 이력 7년 */}
+        <section id="history" className="bg-(--color-paper)">
+          <div className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
+            <SectionHead chapter="iv · 이력 7년" title="처음 만진 건 임베디드, 지금은 AX 프론트엔드." />
+            <ol className="space-y-7">
+              {history.map((h) => (
+                <li key={h.company} className="grid gap-1 sm:grid-cols-[180px_1fr] sm:gap-6">
+                  <div className="font-mono text-xs tracking-wider text-(--color-ink-3)">{h.period}</div>
+                  <div>
+                    <h4 className="text-base font-bold text-(--color-ink) sm:text-lg">{h.company}</h4>
+                    <p className="mt-1 text-[0.95rem] leading-[1.75] text-(--color-ink-2)">{h.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-12 border-t border-(--color-ink)/10 pt-8">
+              <h3 className="font-mono text-xs uppercase tracking-[0.24em] text-(--color-moss)">
+                · Education
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-(--color-ink-2)">
+                호서대학교 정보통신공학과 수석 졸업 (4.2/4.5) · 2013.03 — 2019.02
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 연락 */}
+        <section id="knock" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
+          <SectionHead chapter="v · 연락 · Knock" title="얘기 나눠요." />
+          <div className="grid items-end gap-8 sm:grid-cols-[1fr_auto]">
+            <div className="space-y-5">
+              <p className="max-w-[58ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
+                AI 제품 UX, 엔터프라이즈 SaaS, AI 도구 셋업 — 같이 만질 사람을 찾는 곳이라면 메일 한 통 주세요.
+                Svelte 좋아하는 마음으로 React로 넘어가는 중이고, Claude Code · Codex · MCP 같이 굴려보고 싶은 분들과 얘기하는 게 제일 재밌습니다.
+              </p>
+              <dl className="space-y-2 font-mono text-[0.9rem] text-(--color-ink-2)">
+                <div className="flex gap-3"><dt className="w-16 text-(--color-ink-3)">email</dt><dd><a className="quill-link" href="mailto:neu5563@naver.com" aria-label="이메일 neu5563@naver.com">neu5563@naver.com</a></dd></div>
+                <div className="flex gap-3"><dt className="w-16 text-(--color-ink-3)">tel</dt><dd><a className="quill-link" href="tel:+821022438353" aria-label="전화 010-2243-8353">010-2243-8353</a></dd></div>
+                <div className="flex gap-3"><dt className="w-16 text-(--color-ink-3)">github</dt><dd><a className="quill-link" href="https://github.com/maj0rika" target="_blank" rel="noreferrer" aria-label="GitHub @maj0rika (새 탭)">@maj0rika</a></dd></div>
+                <div className="flex gap-3"><dt className="w-16 text-(--color-ink-3)">demo</dt><dd><a className="quill-link" href="https://demo.allibee.ai" target="_blank" rel="noreferrer" aria-label="Business Agent 데모 사이트 (새 탭)">demo.allibee.ai</a></dd></div>
+              </dl>
+            </div>
+            <MascotPeek className="h-32 w-24 sm:h-40 sm:w-32" />
+          </div>
+        </section>
+
+        <footer className="mx-auto w-full max-w-[860px] px-6 pb-12 pt-4 sm:px-10">
+          <hr className="mb-6 border-t border-(--color-ink)/10" />
+          <p className="text-center font-mono text-[10px] uppercase tracking-[0.28em] text-(--color-ink-3)">
+            © {new Date().getFullYear()} · Lee Taehee · maj0rika.com
+          </p>
+        </footer>
+      </main>
+    </div>
+  );
+}

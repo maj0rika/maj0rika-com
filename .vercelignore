@@ -1,0 +1,14 @@
+node_modules
+dist
+.omc
+.planning
+.cursor
+.codex
+.idea
+.vscode
+.DS_Store
+*.tsbuildinfo
+screenshot-*.png
+preview-*.png
+ref-*.png
+maj0rika-com/

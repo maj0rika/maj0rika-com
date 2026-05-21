@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4efde" />
+    <title>이태희 · Lee Taehee · Résumé</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Noto+Serif+KR:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <style>
+      .skip-link {
+        position: absolute;
+        top: -200px;
+        left: 1rem;
+        z-index: 100;
+        padding: 0.75rem 1.1rem;
+        background: #0c1810;
+        color: #f4efde;
+        text-decoration: none;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        border-radius: 4px;
+      }
+      .skip-link:focus,
+      .skip-link:focus-visible {
+        top: 1rem;
+        outline: 2px solid #f4efde;
+        outline-offset: 3px;
+      }
+      :focus-visible {
+        outline: 2px solid #2b5a32;
+        outline-offset: 3px;
+        border-radius: 3px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto !important; }
+      }
+      :root {
+        --paper: #f4efde;
+        --paper-2: #efe9d2;
+        --ink: #0c1810;
+        --ink-2: #2d3a2f;
+        --ink-3: #6b7867;
+        --moss: #2b5a32;
+        --moss-deep: #173820;
+        --moss-light: #6b9b6f;
+        --clay: #b13a3a;
+
+        --font-sans: "Pretendard Variable", "Pretendard", -apple-system, "Apple SD Gothic Neo", system-ui, sans-serif;
+        --font-display: "Fraunces", "Noto Serif KR", "Apple SD Gothic Neo", serif;
+        --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+      }
+      * { box-sizing: border-box; }
+      html {
+        background: var(--paper);
+        font-size: 106.25%; /* 17px base for better screen & print readability */
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--ink);
+        font-feature-settings: "ss06" on;
+        background: var(--paper);
+        line-height: 1.7;
+      }
+      .paper-grain::before {
+        content: "";
+        position: fixed; inset: 0; pointer-events: none;
+        background-image: radial-gradient(rgba(12, 24, 16, 0.045) 1px, transparent 1px);
+        background-size: 3px 3px;
+        mix-blend-mode: multiply;
+        opacity: 0.6;
+        z-index: 0;
+      }
+      .wrap {
+        position: relative; z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 56px 28px 80px;
+      }
+      .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        margin-bottom: 48px;
+      }
+      .toolbar a { color: var(--ink-2); text-decoration: none; }
+      .toolbar a:hover { color: var(--clay); }
+      h1 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0 0 4px;
+        color: var(--ink);
+      }
+      h1 + p { font-family: var(--font-mono); color: var(--moss); font-size: 13px; letter-spacing: 0.06em; margin: 0; }
+      h2 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+        margin: 56px 0 18px;
+        color: var(--ink);
+        border-bottom: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+        padding-bottom: 8px;
+      }
+      h3 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.15rem;
+        letter-spacing: -0.01em;
+        margin: 36px 0 8px;
+        color: var(--ink);
+      }
+      h4 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 24px 0 6px;
+        color: var(--moss-deep);
+      }
+      p { margin: 0 0 14px; color: var(--ink-2); }
+      strong, b { color: var(--ink); font-weight: 600; }
+      em, i { color: var(--ink-3); font-style: italic; }
+      ul { padding-left: 0; list-style: none; margin: 8px 0 18px; }
+      li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 6px;
+        color: var(--ink-2);
+      }
+      li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--moss);
+      }
+      a { color: var(--ink); text-decoration: underline; text-decoration-color: color-mix(in oklab, var(--moss) 50%, transparent); text-underline-offset: 3px; }
+      a:hover { color: var(--clay); text-decoration-color: var(--clay); }
+      hr { border: 0; border-top: 1px solid color-mix(in oklab, var(--ink) 12%, transparent); margin: 36px 0; }
+      code, .meta { font-family: var(--font-mono); font-size: 0.86em; color: var(--ink-3); }
+      .lede {
+        margin: 0 0 24px;
+        font-size: 1.06rem;
+        line-height: 1.8;
+        color: var(--ink-2);
+      }
+      .lede strong { color: var(--ink); }
+      .meta-block {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: var(--ink-3);
+        margin-top: 8px;
+      }
+      .meta-block a { color: var(--moss); text-decoration-color: color-mix(in oklab, var(--moss) 40%, transparent); }
+      .footer-note {
+        margin-top: 64px;
+        padding-top: 18px;
+        border-top: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        text-align: center;
+      }
+      @media print {
+        body { background: white; }
+        .paper-grain::before, .toolbar { display: none; }
+        .wrap { max-width: none; padding: 24px; }
+      }
+    </style>
+  </head>
+  <body class="paper-grain">
+    <a href="#resume-main" class="skip-link">본문으로 건너뛰기</a>
+    <div class="wrap">
+      <header class="toolbar" aria-label="페이지 도구">
+        <a href="/" aria-label="maj0rika.com 홈으로">← maj0rika.com</a>
+        <a href="/resume.md" download aria-label="이력서 마크다운 파일 다운로드">download .md</a>
+      </header>
+      <main id="resume-main" tabindex="-1">
+
+      <h1>이태희 <span style="font-style: italic; font-weight: 400; opacity: 0.7;">Lee Taehee</span></h1>
+      <p>AX Frontend Engineer · LLM/RAG SaaS · AI-native Development Workflow</p>
+      <div class="meta-block">
+        <a href="mailto:neu5563@naver.com">neu5563@naver.com</a> · 010-2243-8353 · <a href="https://maj0rika.com">maj0rika.com</a> · <a href="https://github.com/maj0rika">@maj0rika</a>
+      </div>
+
+      <h2>Summary</h2>
+      <p class="lede">LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발 프로세스를 함께 설계해 온 <strong>AX Frontend Engineer</strong>입니다. <em>(Frontend 4년+ / Software Engineering 7년+)</em></p>
+      <ul>
+        <li><strong>AI 제품 UX</strong> — BHSN 리걸 AI SaaS Business Agent(Allibee) 프론트엔드를 단독 담당. 실시간 챗·통합 검색·출처 검증·PDF/OCR 뷰어·워크플로우 UX를 1개월 PoC부터 유료 엔터프라이즈 제품까지 제품화.</li>
+        <li><strong>AI-assisted 개발</strong> — Claude Code · Codex · Cursor · MCP로 설계·구현·리뷰·검증 단계를 분리한 개발 체계를 직접 구성·운영.</li>
+        <li><strong>현재</strong> — SvelteKit 프로덕션 경험이 가장 깊고, 운영 제품의 React + Vite + Turborepo 전환을 진행 중.</li>
+      </ul>
+
+      <h2>핵심 성과</h2>
+      <ul>
+        <li>리걸 AI 에이전트 <strong>Business Agent</strong>의 프론트엔드를 단독 담당해 LLM 챗·RAG 검색·출처 검증·문서 뷰어·워크플로우 UX를 제품화 — <strong>Agent 단독 유료 구독 329개 워크스페이스 · 495개 라이선스</strong> 규모 확보 <em>(2026-05-20 기준)</em></li>
+        <li>Agent가 속한 <strong>Allibee 플랫폼</strong>(Business Agent + CLM)은 누적 가입 워크스페이스 <strong>2,767</strong> · 계정 <strong>10,393</strong> 규모로 운영되며 (Agent 유료 구독분은 위 숫자), 율촌·CJ 등 엔터프라이즈 고객사 납품 과정에서 얻은 <strong>실사용 피드백을 SaaS 공통 제품 기능으로 반영</strong>해 현장 요구를 제품 개선으로 연결</li>
+        <li>SSE 기반 LLM 스트리밍과 사내 REF 링크 규격, Markdown tokenizer 확장으로 답변·출처·원문 조항을 연결하는 <strong>출처 검증형 RAG UX</strong> 구현</li>
+        <li>Claude Code · Codex · Cursor · MCP 기반 <strong>AI-assisted 개발 체계</strong>를 구성해 설계·구현·리뷰·검증 단계를 분리 운영</li>
+        <li>운영 중인 SvelteKit 제품의 React + Vite + Turborepo 전환에 위 체계를 적용해 변경 영향도 분석·회귀 방지 검증 루틴 구축</li>
+        <li>SvelteKit 모노레포의 Business Agent 기능 패키지(<code>packages/service</code>)에서 통합 검색·법령 딥링크·PDF/OCR 뷰어·워크플로우·export 플로우를 주도적으로 개발 <em>(1,300+ commits)</em></li>
+      </ul>
+
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>AX / AI-assisted Engineering:</strong> Claude Code · Codex · Cursor · MCP · AI Code Review · Change Impact Analysis · Parity Verification</li>
+        <li><strong>AI Product UX:</strong> LLM Streaming(SSE) · RAG Result Rendering · Citation / Source UX · Multi-LLM Routing UX · Agentic Workflow UX</li>
+        <li><strong>Frontend:</strong> TypeScript · SvelteKit · React · Next.js · Vite · Turborepo · Tailwind CSS</li>
+        <li><strong>Document UX:</strong> PDF.js · OCR BBox Overlay · Markdown Parser Customization · DOCX / PDF Export</li>
+        <li><strong>State / Infra:</strong> Zustand · Pinia · Supabase · AWS S3 · GitHub Actions</li>
+        <li><strong>Previous Experience:</strong> Vue · Nuxt · PHP Migration · Embedded Firmware</li>
+      </ul>
+
+      <h2>AX / AI-assisted Engineering</h2>
+      <ul>
+        <li>Claude Code · Codex · Cursor · MCP를 조합해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 개발 워크플로우 구성</li>
+        <li>MCP 기반 심볼 탐색과 변경 영향도 분석을 활용해 대규모 코드베이스에서 수정 범위·의존성·회귀 가능성을 사전 점검</li>
+        <li>AI 도구별 규칙·컨텍스트·리뷰 기준을 동기화해 Claude Code · Codex · Cursor 간 작업 품질 편차 감소</li>
+        <li>반복되는 구현·검증 패턴을 템플릿·체크리스트·프롬프트 규칙으로 표준화해 재사용 가능한 개발 프로세스로 전환</li>
+      </ul>
+
+      <h2>Experience</h2>
+
+      <h3>주식회사 비에이치에스엔(BHSN) — Frontend Engineer · 2023.08 ~ 현재</h3>
+      <p>리걸테크 스타트업에서 AI 법률 비서 제품군의 프론트엔드를 담당하고 있습니다.</p>
+
+      <h4>Allibee(Business Agent) — 리걸 AI SaaS Frontend · 2024.07 ~ 현재</h4>
+      <p class="meta-block">데모 · <a href="https://demo.allibee.ai" target="_blank" rel="noreferrer">demo.allibee.ai</a> · <code>dummy@dummy.com</code> / <code>testtest1!</code></p>
+      <ul>
+        <li>1개월 PoC로 시작한 리걸 AI 제품의 프론트엔드를 단독 담당하며, 유료 엔터프라이즈 SaaS로 확장되는 과정의 핵심 AI UX 설계·구현</li>
+        <li>법률 업무의 리서치·문서 확인·출처 검증·문서 생성 과정을 LLM/RAG 기반 워크플로우로 전환하는 사용자 경험 제품화</li>
+        <li>SSE 기반 LLM/RAG 챗 UX를 구현해 답변 생성·출처 표시·후속 탐색과 중단/에러/완료 상태를 하나의 대화 흐름으로 통합</li>
+        <li>통합 검색에 조건 단위 캐싱·in-flight Promise 병합·URL 상태 동기화를 적용해 중복 요청을 줄이고 탭 전환 응답성 개선</li>
+        <li>사내 REF 링크 규격과 Markdown tokenizer 확장으로 답변 내 법령·문서 출처에서 원문 조항으로 이동하는 Citation UX 구현</li>
+        <li>PDF.js 기반 뷰어에서 가상 스크롤(페이지 단위 렌더링)·스크롤 위치 동기화·OCR BBox 오버레이로 다중 페이지·스캔 문서 탐색 UX 구현</li>
+        <li>SSE 기반 워크플로우 상태 복구·Canvas 문서 생성/편집·DOCX/PDF export 플로우 구현</li>
+        <li>정규 릴리스 태깅·FE 배포·QA 사이클·핫픽스 대응으로 운영 제품의 릴리스 안정성 개선</li>
+        <li>사내 변호사(실사용자)·기획·AI/BE 팀과 긴밀히 협업해 법률 실무 요구를 제품 UX로 구체화하고, AI→BE→FE 순차 배포·QA 진행 상황을 정리·공유</li>
+      </ul>
+
+      <h4>Business Agent React 마이그레이션 · 2026.04 ~ 현재</h4>
+      <p><em>전환 배경: 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성</em></p>
+      <ul>
+        <li>운영 중인 SvelteKit 제품을 <strong>React + Vite + Turborepo 모노레포</strong> 구조로 단계적 전환</li>
+        <li>Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영</li>
+        <li>라우팅·페이지 셸·i18n·hosted mode를 분리하며 기존 기능을 신규 React 구조로 재구성</li>
+        <li>golden evidence · parity smoke · 브라우저 기반 검증 절차로 기존 SvelteKit 동작과 React 구현 간 패리티를 검증해 핵심 화면 회귀 방지</li>
+        <li>반복 가능한 마이그레이션 패턴을 프롬프트 규칙·체크리스트·검증 절차로 표준화</li>
+      </ul>
+
+      <h4>CLM — 계약 관리 솔루션 Frontend · 2023.08 ~ 2024.07</h4>
+      <ul>
+        <li>PDF 뷰어 렌더링 파이프라인과 계약 검토 멀티 패널 UI 구현으로 계약 검토 UX 개선</li>
+        <li>결재선 트리·드래그 서명, 업로드 검증·OTP·세션 타임아웃 등 CSAP 보안 요구사항 대응</li>
+      </ul>
+
+      <h3>코드레시피(CodeRecipe) — Frontend Developer · 2022.02 ~ 2023.04</h3>
+      <ul>
+        <li>물류 SaaS Logipasta Admin 실시간 미리보기 개편으로 <strong>관련 기술지원 문의 50%+ 감소</strong></li>
+        <li>공통 UI 컴포넌트·Admin 화면 구조 설계로 반복 화면 개발 효율 개선</li>
+        <li>뉴스 플랫폼 QNN24를 PHP 구조에서 Vue3/Nuxt 프론트엔드로 전환, S3 Signed URL 업로드·I'mport 결제 연동 구현</li>
+      </ul>
+
+      <h3>세라에스이(주) — Embedded Developer · 2019.01 ~ 2022.02</h3>
+      <ul>
+        <li>산업용 오일 센서 모니터링 펌웨어·RFID 장비 개선 수행 (특허 출원 참여)</li>
+        <li>RFID 인식거리 개선으로 현대엘리베이터 납품 제품 품질 개선</li>
+      </ul>
+
+      <h2>Side Projects</h2>
+      <h4>AI 가계부 — 자연어·이미지 입력 가계부 · Next.js · Supabase · Capacitor</h4>
+      <ul>
+        <li>자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현, 웹+모바일 단일 코드베이스(Capacitor)로 운영</li>
+        <li>데모 · <a href="https://household-account-book-tawny.vercel.app" target="_blank" rel="noreferrer">household-account-book-tawny.vercel.app</a> · <code>test@test.com</code> / <code>test1234</code></li>
+      </ul>
+
+      <h2>Education</h2>
+      <p><strong>호서대학교</strong> 정보통신공학과 수석 졸업 (4.2/4.5) · 2013.03 ~ 2019.02</p>
+
+      <p class="footer-note">© 2026 · Lee Taehee · maj0rika.com</p>
+      </main>
+    </div>
+  </body>
+</html>

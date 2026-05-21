@@ -1,0 +1,34 @@
+node_modules
+dist
+*.tsbuildinfo
+
+# logs / system
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor / OS
+.idea
+.vscode
+
+# planning / orchestration scratch
+.omc
+.planning
+.cursor
+.codex
+
+# screenshots / scratch references
+screenshot-*.png
+preview-*.png
+ref-*.png
+maj0rika-com/
+
+# env
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel
