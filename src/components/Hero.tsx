@@ -122,7 +122,7 @@ export default function Hero() {
                     style={{ width: "1.15em", height: "1.35em" }}
                   >
                     <img
-                      src="/majorica-frog-sm.png"
+                      src="/majorica-frog-sm.webp"
                       alt=""
                       aria-hidden="true"
                       draggable={false}

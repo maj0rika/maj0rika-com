@@ -6,7 +6,7 @@ type Props = {
 export default function Mascot({ className = "", small = false }: Props) {
   return (
     <img
-      src={small ? "/majorica-frog-sm.png" : "/majorica-frog.png"}
+      src={small ? "/majorica-frog-sm.webp" : "/majorica-frog.webp"}
       alt="maj0rika — Majo Rika witch frog"
       className={`object-contain ${className}`}
       draggable={false}

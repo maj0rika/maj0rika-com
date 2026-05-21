@@ -58,7 +58,7 @@ export function CircleRune({ className = "" }: { className?: string }) {
 export function MascotPeek({ className = "" }: { className?: string }) {
   return (
     <img
-      src="/majorica-frog-sm.png"
+      src="/majorica-frog-sm.webp"
       alt=""
       aria-hidden="true"
       draggable={false}
