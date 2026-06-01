@@ -12,7 +12,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - **AI 제품 UX** — BHSN 리걸 AI SaaS Business Agent(Allibee) 프론트엔드를 단독 담당. 실시간 챗·통합 검색·출처 검증·PDF/OCR 뷰어·워크플로우 UX를 1개월 PoC부터 유료 엔터프라이즈 제품까지 제품화
 - **AI-assisted 개발** — Claude Code · Codex · Cursor · MCP로 설계·구현·리뷰·검증 단계를 분리한 개발 체계를 직접 구성·운영
-- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리
+- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리. contract-first QA와 filesystem evidence, usage/resource guard를 운영 원칙으로 둠
 - **현재** — SvelteKit 프로덕션 경험이 가장 깊고, 운영 제품의 React + Vite + Turborepo 전환을 진행 중
 
 ---
@@ -31,7 +31,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 ## Skills
 
 - **AX / AI-assisted Engineering:** Claude Code · Codex · Cursor · MCP · Hermes Agent · AI Code Review · Change Impact Analysis · Parity Verification
-- **Knowledge Ops:** Session Search · Skills · Cron Automation · Public-safe KB Summarization · Evidence-based Completion
+- **Knowledge Ops:** Session Search · Skills · Cron Automation · Public-safe KB Summarization · Contract-first QA · Filesystem Evidence · Usage/Resource Guard
 - **AI Product UX:** LLM Streaming(SSE) · RAG Result Rendering · Citation / Source UX · Multi-LLM Routing UX · Agentic Workflow UX
 - **Frontend:** TypeScript · SvelteKit · React · Next.js · Vite · Turborepo · Tailwind CSS
 - **Document UX:** PDF.js · OCR BBox Overlay · Markdown Parser Customization · DOCX / PDF Export
@@ -47,6 +47,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 - MCP 기반 심볼 탐색과 변경 영향도 분석을 활용해 대규모 코드베이스에서 수정 범위·의존성·회귀 가능성을 사전 점검
 - AI 도구별 규칙·컨텍스트·리뷰 기준을 동기화해 Claude Code · Codex · Cursor 간 작업 품질 편차 감소
 - 반복되는 구현·검증 패턴을 템플릿·체크리스트·프롬프트 규칙으로 표준화해 재사용 가능한 개발 프로세스로 전환
+- 외부 Claude Code 하네스 사례를 리서치해 auto-select, contract-first QA, filesystem-as-truth, usage gate 같은 운영 패턴을 내 워크플로우에 맞게 선별 흡수
 
 ---
 

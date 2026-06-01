@@ -69,8 +69,13 @@
     outline-offset: 3px;
   }
 
+  :where(#bizagent, #workshop, #ops, #builds, #history, #knock) {
+    scroll-margin-top: 1.5rem;
+  }
+
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
     font-size: 112.5%; /* 18px base to make Kalam & Gaegu handwriting fonts highly readable */
   }
   body {
@@ -104,6 +109,88 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--color-ink-3);
+  }
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    min-height: 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+  .stamp::before {
+    content: "\270E";
+    font-size: 0.85em;
+    color: var(--color-moss);
+    transform: rotate(-8deg);
+  }
+  .note-index__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.2rem;
+    color: var(--color-ink-2);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .note-index__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-left: 1.35rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .note-index__link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0.78rem;
+    height: 0.78rem;
+    border: 1.5px solid var(--color-moss);
+    border-radius: 4px 5px 3px 5px / 5px 3px 5px 4px;
+    transform: rotate(-3deg);
+  }
+  .note-index__link::after {
+    content: "";
+    position: absolute;
+    left: 0.18rem;
+    width: 0.45rem;
+    height: 0.25rem;
+    border-left: 2px solid var(--color-clay);
+    border-bottom: 2px solid var(--color-clay);
+    opacity: 0;
+    transform: translateY(-1px) rotate(-45deg);
+    transition: opacity .15s ease;
+  }
+  .note-index__link:hover,
+  .note-index__link:focus-visible {
+    color: var(--color-clay);
+  }
+  .note-index__link:hover::after,
+  .note-index__link:focus-visible::after {
+    opacity: 1;
+  }
+  .contact-reasons {
+    display: grid;
+    gap: 0.45rem;
+    max-width: 58ch;
+    color: var(--color-ink-2);
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+  .contact-reasons li {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .contact-reasons li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-moss);
   }
   .quill-link {
     color: var(--color-ink);
@@ -175,4 +262,78 @@
 }
 .doodle-hover:hover {
   animation: wobble 0.6s ease-in-out;
+}
+
+/* ── 연장통: recruiter scan-aid tech ribbon (margin-note, not badges) ── */
+.stack-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.22rem 0.5rem;
+  margin: 1.25rem 0 0;
+  max-width: 80ch;
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-2);
+}
+.stack-lead {
+  margin-right: 0.1rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+.stack-group {
+  margin-left: 0.55rem;
+  padding-left: 0.6rem;
+  border-left: 1.5px solid color-mix(in oklab, var(--color-moss) 55%, transparent);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-moss-deep);
+}
+.stack-strip > .stack-group:first-child {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
+}
+.stack-sep {
+  color: color-mix(in oklab, var(--color-ink-3) 50%, transparent);
+  user-select: none;
+}
+.stack-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.4rem;
+  color: var(--color-ink);
+}
+.stack-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 7px 9px 6px 8px / 8px 6px 9px 7px;
+  transform: rotate(-1.2deg);
+  pointer-events: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.stack-chip--alt::before {
+  transform: rotate(0.9deg);
+}
+.stack-chip:hover {
+  color: var(--color-clay);
+}
+.stack-chip:hover::before {
+  border-color: var(--color-clay);
+  transform: rotate(0.3deg);
+}
+.stack-chip--alt:hover::before {
+  transform: rotate(-0.3deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stack-chip::before { transition: none; transform: rotate(-1.2deg); }
+  .stack-chip--alt::before { transform: rotate(0.9deg); }
 }

@@ -219,6 +219,31 @@ export default function Hero() {
             AI 도구는 일하다 만지기 시작했는데, 어느 순간 그게 또 일이 돼버렸네요.
           </p>
         </div>
+
+        {/* 연장통 — 손에 익은 도구 (recruiter 5초 스캔용 margin-note ribbon) */}
+        <p className="stack-strip">
+          <span className="stack-lead">· 연장통 · 손에 익은 도구 </span>
+          <span className="stack-group">프론트 </span>
+          <span className="stack-item">TypeScript </span>
+          <span aria-hidden="true" className="stack-sep">·</span>
+          <span className="stack-chip">React</span>
+          <span aria-hidden="true" className="stack-sep">·</span>
+          <span className="stack-item"> SvelteKit </span>
+          <span aria-hidden="true" className="stack-sep">·</span>
+          <span className="stack-item">Next.js </span>
+
+          <span className="stack-group">AI UX </span>
+          <span className="stack-item">LLM 스트리밍(SSE) </span>
+          <span aria-hidden="true" className="stack-sep">·</span>
+          <span className="stack-chip stack-chip--alt">출처 검증 UX</span>
+          <span aria-hidden="true" className="stack-sep">·</span>
+          <span className="stack-item"> PDF.js </span>
+
+          <span className="stack-group">도구 </span>
+          <span className="stack-item">Claude Code </span>
+          <span aria-hidden="true" className="stack-sep">·</span>
+          <span className="stack-item">MCP </span>
+        </p>
       </div>
 
       {/* BOTTOM */}

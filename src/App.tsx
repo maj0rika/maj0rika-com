@@ -47,6 +47,11 @@ const workshop = [
     body:
       "결과물은 항상 사람이 한 번 더 봅니다. 회귀 두 번 안 맞으려고 테스트 코드는 무조건 같이 남기는 룰을 문서에 박아뒀어요. 최근엔 goal 기능으로 작업 목표를 미리 묶어두는 것도 같이 굴려보는 중.",
   },
+  {
+    head: "하네스는 자동화보다 검증 계약이 먼저입니다",
+    body:
+      "외부 Claude Code 하네스 사례를 볼 때도 도구 숫자보다 auto-select, contract-first QA, filesystem = truth 같은 운영 원칙을 먼저 봅니다. 우리 쪽에는 목표 → 증거 → 검증 → 공개 가능한 요약 순서로만 흡수합니다.",
+  },
 ];
 
 const opsNotes = [
@@ -65,6 +70,11 @@ const opsNotes = [
     body:
       "git diff --check, build, 브라우저 smoke, 로그, 스크린샷처럼 재현 가능한 근거를 completion의 일부로 둡니다. 실패하면 실패 로그에 privacy-safe하게 남기고, 억지 커밋은 하지 않습니다.",
   },
+  {
+    head: "리소스 가드도 자동화의 일부입니다",
+    body:
+      "일일 업데이트는 CPU·메모리·사용량 스냅샷을 먼저 보고 병렬 에이전트 수를 조절합니다. 장기 실행·zombie 후보는 승인 목록으로 분리하고, 실행 중인 프로세스는 사람 승인 없이 끊지 않습니다.",
+  },
 ];
 
 const builds = [
@@ -76,6 +86,8 @@ const builds = [
     stack: "Next.js · Supabase · Capacitor · MiniMax / Fireworks / Kimi",
     link: "https://household-account-book-tawny.vercel.app",
     note: "테스트 계정 test@test.com / test1234",
+    created: "2025.11",
+    updated: "2026.05",
   },
 ];
 
@@ -99,11 +111,26 @@ const history = [
   },
 ];
 
-function SectionHead({ chapter, title }: { chapter: string; title: string }) {
+function dateTimeValue(value: string) {
+  return value.replace(".", "-");
+}
+
+function DateStamp({ kind, value, label }: { kind: "created" | "updated"; value: string; label: string }) {
+  return (
+    <span className="stamp" aria-label={`${label} ${value}`}>
+      {kind} · <time dateTime={dateTimeValue(value)}>{value}</time>
+    </span>
+  );
+}
+
+function SectionHead({ chapter, title, updated }: { chapter: string; title: string; updated?: string }) {
   return (
     <header className="mb-10 grid gap-2 sm:mb-12 sm:grid-cols-[160px_1fr] sm:items-baseline sm:gap-8">
       <span className="label-mono">{chapter}</span>
-      <h2 className="font-display text-2xl font-bold leading-tight tracking-[-0.012em] text-(--color-ink) sm:text-[2.1rem]" style={{ fontWeight: 700 }}>{title}</h2>
+      <div className="grid gap-1.5">
+        <h2 className="font-display text-2xl font-bold leading-tight tracking-[-0.012em] text-(--color-ink) sm:text-[2.1rem]" style={{ fontWeight: 700 }}>{title}</h2>
+        {updated && <DateStamp kind="updated" value={updated} label="마지막 업데이트" />}
+      </div>
     </header>
   );
 }
@@ -114,9 +141,22 @@ export default function App() {
       <Hero />
 
       <main id="main-content" className="paper-grain relative bg-(--color-paper-2)" tabIndex={-1}>
+        {/* 차례 — 빠른 읽기 경로 */}
+        <nav aria-label="차례" className="note-index mx-auto w-full max-w-[860px] px-6 pt-16 sm:px-10 sm:pt-20">
+          <p className="label-mono mb-3">· 차례 · 30초 스캔</p>
+          <ol className="note-index__list">
+            <li><a className="note-index__link" href="#bizagent">본업 — 리걸 AI SaaS</a></li>
+            <li><a className="note-index__link" href="#workshop">공방 — AI 도구 셋업</a></li>
+            <li><a className="note-index__link" href="#ops">운영 — 컨텍스트·검증</a></li>
+            <li><a className="note-index__link" href="#builds">개인 프로젝트</a></li>
+            <li><a className="note-index__link" href="#history">이력 7년</a></li>
+            <li><a className="note-index__link" href="#knock">연락</a></li>
+          </ol>
+        </nav>
+
         {/* 본업 */}
         <section id="bizagent" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" />
+          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026.05" />
           <p className="mb-3 max-w-[64ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             BHSN의 리걸 AI 에이전트예요. 2024년 7월부터 프론트엔드를 단독으로 담당해 왔습니다.
             지금은 Agent 단독 유료 구독이 <strong className="font-semibold text-(--color-ink)">329개 워크스페이스</strong> · <strong className="font-semibold text-(--color-ink)">495개 라이선스</strong>. 참고로 Allibee 플랫폼 전체(Agent + CLM)는 누적 가입 <span className="text-(--color-ink-3)">2,767 워크스페이스 · 10,393 계정</span>이고, 위 Agent 숫자는 그중 유료 구독분입니다.
@@ -158,6 +198,7 @@ export default function App() {
             <SectionHead
               chapter="ii · 공방 · AX"
               title="AI 도구 셋업이 어쩌다 본업의 절반이 됐어요."
+              updated="2026.05"
             />
             <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
               한 AI 도구에 매몰되면 그 도구가 막히는 날이 작업이 멈추는 날이 됩니다. 그래서 도구를 일찍부터 분산하고, 규칙·컨텍스트·검증을 같은 표준으로 묶어서 굴려요.
@@ -195,17 +236,19 @@ export default function App() {
 
         {/* Knowledge Ops */}
         <section id="ops" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." />
+          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026.06" />
           <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
-            AI-assisted development는 모델을 잘 고르는 일만으로 끝나지 않습니다. 여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.
+            AI-assisted development는 모델 이름표를 모으는 일이 아니라, 흩어진 문서·결정·반복 질문을 다시 찾을 수 있게 묶는 일입니다.
+            여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.
           </p>
           <div className="space-y-9">
             {opsNotes.map((note, i) => (
               <article key={note.head} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
-                <div className="num-display text-2xl text-(--color-moss-light) sm:text-3xl">
+                <div className="num-display text-2xl text-(--color-moss-light) sm:text-3xl" aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
+                  <p className="label-mono mb-1">· 운영 원칙 {String(i + 1).padStart(2, "0")}</p>
                   <h3 className="text-lg font-bold text-(--color-ink) sm:text-xl">{note.head}</h3>
                   <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{note.body}</p>
                 </div>
@@ -216,7 +259,7 @@ export default function App() {
 
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iv · side" title="개인 프로젝트" />
+          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026.05" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
@@ -230,6 +273,12 @@ export default function App() {
                   </div>
                   <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{p.desc}</p>
                   <div className="mt-2 font-mono text-xs text-(--color-moss)">{p.stack}</div>
+                  {(p.created || p.updated) && (
+                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                      {p.created && <DateStamp kind="created" value={p.created} label="만든 날" />}
+                      {p.updated && <DateStamp kind="updated" value={p.updated} label="마지막 업데이트" />}
+                    </div>
+                  )}
                   {p.note && (
                     <div className="mt-1 font-mono text-[11px] text-(--color-ink-3)">{p.note}</div>
                   )}
@@ -247,7 +296,7 @@ export default function App() {
         {/* 이력 7년 */}
         <section id="history" className="bg-(--color-paper)">
           <div className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-            <SectionHead chapter="v · 이력 7년" title="처음 만진 건 임베디드, 지금은 AX 프론트엔드." />
+            <SectionHead chapter="v · 이력 7년" title="처음 만진 건 임베디드, 지금은 AX 프론트엔드." updated="2026.05" />
             <ol className="space-y-7">
               {history.map((h) => (
                 <li key={h.company} className="grid gap-1 sm:grid-cols-[180px_1fr] sm:gap-6">
@@ -273,13 +322,28 @@ export default function App() {
 
         {/* 연락 */}
         <section id="knock" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="vi · 연락 · Knock" title="얘기 나눠요." />
+          <SectionHead chapter="vi · 연락 · Knock" title="얘기 나눠요." updated="2026.06" />
           <div className="grid items-end gap-8 sm:grid-cols-[1fr_auto]">
             <div className="space-y-5">
               <p className="max-w-[58ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
                 AI 제품 UX, 엔터프라이즈 SaaS, AI 도구 셋업 — 같이 만질 사람을 찾는 곳이라면 메일 한 통 주세요.
                 Svelte 좋아하는 마음으로 React로 넘어가는 중이고, Claude Code · Codex · MCP 같이 굴려보고 싶은 분들과 얘기하는 게 제일 재밌습니다.
               </p>
+              <p className="max-w-[58ch] text-[0.95rem] leading-[1.8] text-(--color-ink-3)">
+                이런 걸 적어 주시면 답이 빨라요 — 함께 만질 제품·범위, 기대하는 역할, 대략의 일정.
+              </p>
+              <ul className="contact-reasons" aria-label="연락하면 좋은 주제">
+                <li>AX 도입 · AI 도구 셋업을 실제 제품 흐름에 붙이는 일</li>
+                <li>프론트엔드 협업 · SvelteKit에서 React로 넘어가는 마이그레이션</li>
+                <li>Claude Code · Codex · MCP를 같이 굴려보는 커피챗</li>
+              </ul>
+              <a
+                href="mailto:neu5563@naver.com?subject=maj0rika.com%20%E2%80%94%20%EA%B0%99%EC%9D%B4%20%EB%A7%8C%EB%93%A4%20%EC%A0%9C%EC%95%88&body=%ED%95%A8%EA%BB%98%20%EB%A7%8C%EC%A7%88%20%EC%A0%9C%ED%92%88%2F%EB%B2%94%EC%9C%84%3A%0A%EA%B8%B0%EB%8C%80%ED%95%98%EB%8A%94%20%EC%97%AD%ED%95%A0%3A%0A%EB%8C%80%EB%9E%B5%EC%9D%98%20%EC%9D%BC%EC%A0%95%3A%0A"
+                className="doodle-box doodle-hover font-display text-lg font-bold text-(--color-ink)"
+                aria-label="제안 내용을 담아 이메일 보내기 (neu5563@naver.com)"
+              >
+                메일로 제안 보내기 →
+              </a>
               <dl className="space-y-2 font-mono text-[0.9rem] text-(--color-ink-2)">
                 <div className="flex gap-3"><dt className="w-16 text-(--color-ink-3)">email</dt><dd><a className="quill-link" href="mailto:neu5563@naver.com" aria-label="이메일 neu5563@naver.com">neu5563@naver.com</a></dd></div>
                 <div className="flex gap-3"><dt className="w-16 text-(--color-ink-3)">tel</dt><dd><a className="quill-link" href="tel:+821022438353" aria-label="전화 010-2243-8353">010-2243-8353</a></dd></div>

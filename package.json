@@ -7,7 +7,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview --host",
+    "verify": "node scripts/verify-content.mjs",
+    "verify:json": "node scripts/verify-content.mjs --json",
+    "verify:strict": "node scripts/verify-content.mjs --strict",
+    "verify:test": "node scripts/verify-content.test.mjs",
+    "ontology:diff": "node scripts/portfolio-ontology-dry-run.js --dry-run",
+    "ontology:diff:redact": "node scripts/portfolio-ontology-dry-run.js --dry-run --redact",
+    "ontology:report": "node scripts/portfolio-ontology-dry-run.js --dry-run --out ontology-report.txt",
+    "ontology:apply": "node scripts/portfolio-ontology-dry-run.js --apply"
   },
   "dependencies": {
     "framer-motion": "^12.39.0",
