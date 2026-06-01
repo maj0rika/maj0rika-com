@@ -49,6 +49,24 @@ const workshop = [
   },
 ];
 
+const opsNotes = [
+  {
+    head: "지식베이스는 원문 저장소가 아니라 작업 방향판입니다",
+    body:
+      "Hermes 세션 검색, 스킬, 사용자 KB, GitHub/local repo 메타데이터를 묶되 토큰·메일·개인 메시지 원문은 배제합니다. 매일 공개 가능한 변화만 골라 개인 사이트 업데이트 후보로 올립니다.",
+  },
+  {
+    head: "어떤 맥에서 열어도 같은 컨텍스트로 시작합니다",
+    body:
+      "맥미니와 맥북 사이에서 레포·에이전트 규칙·스킬·검증 루틴이 끊기지 않게 경로와 실행 규칙을 고정합니다. 새 세션은 먼저 KB와 handoff가 아니라 실제 repo 상태부터 확인합니다.",
+  },
+  {
+    head: "완료 선언보다 증거를 먼저 남깁니다",
+    body:
+      "git diff --check, build, 브라우저 smoke, 로그, 스크린샷처럼 재현 가능한 근거를 completion의 일부로 둡니다. 실패하면 실패 로그에 privacy-safe하게 남기고, 억지 커밋은 하지 않습니다.",
+  },
+];
+
 const builds = [
   {
     name: "AI 가계부",
@@ -161,11 +179,11 @@ export default function App() {
 
             <aside className="mt-12 space-y-3 border-l-2 border-(--color-moss-light) pl-5 text-[0.95rem] leading-[1.8] text-(--color-ink-2)">
               <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-(--color-moss)">
-                · 지금 실험 중 · 다음 시도
+                · 지금 운영 중 · 다음 시도
               </p>
               <p>
-                개인 맥미니에 학습형 에이전트 <strong className="font-semibold text-(--color-ink)">Hermes</strong>를 띄워 몇 주째 굴려보는 중입니다.
-                도구가 점점 나를 학습한다는 게 결국 가장 큰 변수라서, 다음 셋업의 방향이 거기서 나올 것 같아요.
+                개인 맥미니에 학습형 에이전트 <strong className="font-semibold text-(--color-ink)">Hermes</strong>를 띄워 세션 검색·스킬·크론 작업을 계속 축적하고 있습니다.
+                도구가 나를 학습하게 하되, 공개 가능한 요약과 민감 원문을 분리하는 게 다음 셋업의 핵심이에요.
               </p>
               <p>
                 <strong className="font-semibold text-(--color-ink)">Gemini 3.5 Flash</strong>랑 <strong className="font-semibold text-(--color-ink)">Antigravity CLI</strong>도 나왔지만, 3.5 Pro가 나오면 그때 넣어보려고 합니다 —
@@ -175,9 +193,30 @@ export default function App() {
           </div>
         </section>
 
+        {/* Knowledge Ops */}
+        <section id="ops" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
+          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." />
+          <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
+            AI-assisted development는 모델을 잘 고르는 일만으로 끝나지 않습니다. 여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.
+          </p>
+          <div className="space-y-9">
+            {opsNotes.map((note, i) => (
+              <article key={note.head} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
+                <div className="num-display text-2xl text-(--color-moss-light) sm:text-3xl">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-(--color-ink) sm:text-xl">{note.head}</h3>
+                  <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{note.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iii · side" title="개인 프로젝트" />
+          <SectionHead chapter="iv · side" title="개인 프로젝트" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
@@ -208,7 +247,7 @@ export default function App() {
         {/* 이력 7년 */}
         <section id="history" className="bg-(--color-paper)">
           <div className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-            <SectionHead chapter="iv · 이력 7년" title="처음 만진 건 임베디드, 지금은 AX 프론트엔드." />
+            <SectionHead chapter="v · 이력 7년" title="처음 만진 건 임베디드, 지금은 AX 프론트엔드." />
             <ol className="space-y-7">
               {history.map((h) => (
                 <li key={h.company} className="grid gap-1 sm:grid-cols-[180px_1fr] sm:gap-6">
@@ -234,7 +273,7 @@ export default function App() {
 
         {/* 연락 */}
         <section id="knock" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="v · 연락 · Knock" title="얘기 나눠요." />
+          <SectionHead chapter="vi · 연락 · Knock" title="얘기 나눠요." />
           <div className="grid items-end gap-8 sm:grid-cols-[1fr_auto]">
             <div className="space-y-5">
               <p className="max-w-[58ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">

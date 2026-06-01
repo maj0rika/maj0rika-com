@@ -10,6 +10,7 @@ const VARIANTS: Variant[] = [
   { pre: "한 달 PoC라더니, 4년째", post: " 와 굴리는 중." },
   { pre: "Svelte 잘 합니다.", post: " 가 React 가자고 해서요." },
   { pre: "Cursor 깔러 갔다가, MCP 서버 만들고 왔어요", post: "." },
+  { pre: "AI가 끝냈다고요? 저는", post: " 로 다시 봅니다." },
   { pre: "법령 출처 안 달면 변호사가 안 써요", post: "." },
   { pre: "AX Frontend, Seoul", post: " — since 2019.", lang: "en" },
 ];
@@ -64,6 +65,7 @@ export default function Hero() {
         >
           <a href="#bizagent" className="hover:text-(--color-clay)">본업</a>
           <a href="#workshop" className="hover:text-(--color-clay)">공방</a>
+          <a href="#ops" className="hover:text-(--color-clay)">운영</a>
           <a href="#builds" className="hover:text-(--color-clay)">side</a>
           <a href="#history" className="hover:text-(--color-clay)">7년</a>
           <a href="#knock" className="hover:text-(--color-clay)">연락</a>
