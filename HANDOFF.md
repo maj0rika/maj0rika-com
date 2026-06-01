@@ -11,11 +11,11 @@
 | **Live URL** | https://maj0rika.com (apex), https://www.maj0rika.com (308→apex) |
 | **호스팅** | Vercel · 프로젝트 `maj0rika-com` · 팀 `maj0rikas-projects` |
 | **도메인 등록기관** | Vercel (만료 2027-05-21) |
-| **레포지토리** | 로컬 only (`/Users/leeth/maj0rika-com`) · git 미초기화 · GitHub 연결 안 됨 |
-| **현재 브랜치** | n/a (no git) |
+| **레포지토리** | GitHub `maj0rika/maj0rika-com` · 로컬 `/Users/taeheelee/Desktop/git/maj0rika-com` |
+| **현재 브랜치** | `main` |
 | **빌드 도구** | Vite 6.4.2 + pnpm 10.5.0 + Node 24.x |
 | **배포 명령** | `npx vercel deploy --prod --yes` |
-| **마지막 작업** | 손글씨/낙서 디자인 무드 적용 + 공식 마조리카 PNG 유지 |
+| **마지막 작업** | GitHub 연결 이후 공식 마조리카 PNG/WebP 및 OG 이미지 최적화 반영 |
 
 ---
 
@@ -193,8 +193,11 @@ npx vercel alias set <new-deployment-url> www.maj0rika.com
 - 없음. 완전 정적 SPA. 빌드 타임 시크릿도 없음
 
 ### Git
-- **로컬에만 있음**. `git init` 안 됨. GitHub repo 없음.
-- 만약 git 추가하려면 사용자 확인 필요 (사용자가 push까지 해도 되는지)
+- 원격: `https://github.com/maj0rika/maj0rika-com.git`
+- 로컬: `/Users/taeheelee/Desktop/git/maj0rika-com`
+- 기본 브랜치: `main`
+- 작업 전 `HOME=/Users/taeheelee git fetch origin` + `HOME=/Users/taeheelee git pull --ff-only origin main`으로 동기화.
+- 사용자/cron이 만들지 않은 dirty 변경이 있으면 덮어쓰거나 커밋하지 말고 먼저 보고.
 
 ---
 
@@ -249,7 +252,7 @@ npx vercel alias set <new-deployment-url> www.maj0rika.com
 
 ## 10. 자연스러운 다음 작업 후보 (사용자가 고를 만한 것)
 
-- [ ] **GitHub repo 생성 + Vercel git integration** — 자동 preview deployment + PR마다 URL
+- [ ] **Vercel Git Integration 상태 확인** — GitHub 연결은 완료됨. Vercel preview/prod 자동 배포 연결 여부만 확인
 - [ ] **Vercel Analytics 켜기** — 무료 tier 충분
 - [ ] **OG 이미지 생성** — 현재 메타태그는 있지만 og:image 없음 (소셜 공유 시 미리보기 빈약). 1200×630 OG 카드 PNG 생성 → public/og.png 후 index.html에 link
 - [ ] **Lighthouse 점수 측정** — 현재 미측정. perf/a11y/best-practices 100점 목표
