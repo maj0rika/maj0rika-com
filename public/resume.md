@@ -4,6 +4,8 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
+업데이트: 2026-06-02
+
 ---
 
 ## Summary
@@ -12,7 +14,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - **AI 제품 UX** — BHSN 리걸 AI SaaS Business Agent(Allibee) 프론트엔드를 단독 담당. 실시간 챗·통합 검색·출처 검증·PDF/OCR 뷰어·워크플로우 UX를 1개월 PoC부터 유료 엔터프라이즈 제품까지 제품화
 - **AI-assisted 개발** — Claude Code · Codex · Cursor · MCP로 설계·구현·리뷰·검증 단계를 분리한 개발 체계를 직접 구성·운영
-- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리. contract-first QA와 filesystem evidence, usage/resource guard를 운영 원칙으로 둠
+- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리. contract-first QA와 filesystem evidence, usage/resource guard, cross-device mistake immunity를 운영 원칙으로 둠
 - **현재** — SvelteKit 프로덕션 경험이 가장 깊고, 운영 제품의 React + Vite + Turborepo 전환을 진행 중
 
 ---
@@ -42,8 +44,11 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 ## AX / AI-assisted Engineering
 
+추가일: 2026-06-02 · 업데이트: 2026-06-02
+
 - Claude Code · Codex · Cursor · MCP를 조합해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 개발 워크플로우 구성
 - Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기와 에이전트 사이의 작업 컨텍스트를 이어가는 public-safe knowledge ops 운영
+- OntologyHub를 단순 공유 메모가 아니라 한 기기에서 배운 실패를 다른 기기에서 반복하지 않게 만드는 guardrail/verification 루프로 설계
 - MCP 기반 심볼 탐색과 변경 영향도 분석을 활용해 대규모 코드베이스에서 수정 범위·의존성·회귀 가능성을 사전 점검
 - AI 도구별 규칙·컨텍스트·리뷰 기준을 동기화해 Claude Code · Codex · Cursor 간 작업 품질 편차 감소
 - 반복되는 구현·검증 패턴을 템플릿·체크리스트·프롬프트 규칙으로 표준화해 재사용 가능한 개발 프로세스로 전환
@@ -72,6 +77,8 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 - 사내 변호사(실사용자)·기획·AI/BE 팀과 긴밀히 협업해 법률 실무 요구를 제품 UX로 구체화하고, AI→BE→FE 순차 배포·QA 진행 상황을 정리·공유하며 직군 간 인식 차이를 줄임
 
 #### Business Agent React 마이그레이션 · 2026.04 ~ 현재
+
+추가일: 2026-06-02 · 업데이트: 2026-06-02
 
 *전환 배경: 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성*
 
@@ -102,6 +109,8 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 ## Side Projects
 
 **AI 가계부** — 자연어·이미지 입력 가계부 · Next.js · Supabase · Capacitor
+
+추가일: 2026-06-02 · 업데이트: 2026-06-02
 
 - 자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현, 웹+모바일 단일 코드베이스(Capacitor)로 운영
 - 데모: https://household-account-book-tawny.vercel.app · 테스트 계정 `test@test.com` / `test1234`

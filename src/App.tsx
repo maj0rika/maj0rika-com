@@ -21,59 +21,93 @@ const migration = [
   "반복 가능한 마이그레이션 패턴을 프롬프트 규칙 · 체크리스트 · 검증 절차로 표준화",
 ];
 
-const workshop = [
+type TimedNote = {
+  head: string;
+  body: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+const workshop: TimedNote[] = [
   {
     head: "Claude · Codex · Cursor · OpenCode를 같이 굴립니다",
     body:
       "설계는 Claude(OMC), 구현은 Codex/OMX medium(가성비·속도 둘 다 좋아서 애용), 자잘한 건 Cursor Composer 2.5. 쿼터가 모자라면 OpenCode Go 같은 풀로 빠집니다. 한 도구에 매몰되지 않는 게 셋업의 기본 전제예요.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "문제 크기에 맞춰 모델을 가릅니다",
     body:
       "복잡한 설계는 ralplan과 deep-interview로 깊게 파고, 가벼운 건 Codex 5.5 fast medium이나 Cursor Composer로 끊어요. 큰 모델에 작은 문제 던지는 게 시간·비용 양쪽에서 가장 큰 낭비라서요.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "어디서 열어도 규칙·컨텍스트가 따라온다",
     body:
       "node_modules, .env, .mcp.json, 에이전트 메모리, 스킬 — worktree나 clone 사이에서 끊기면 짜증나잖아요. 심볼릭 링크로 묶어두면 어떤 도구로 들어가도 같은 셋업이 따라옵니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "수정 전에 도미노부터 봅니다",
     body:
       "MCP로 심볼이랑 참조를 따라가서, 이 한 줄 고치면 어디까지 같이 깨지는지 먼저 확인해요. 큰 코드베이스에선 그게 회귀 막는 가장 싼 방법이거든요.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "AI가 끝났다고 끝난 게 아닙니다",
     body:
       "결과물은 항상 사람이 한 번 더 봅니다. 회귀 두 번 안 맞으려고 테스트 코드는 무조건 같이 남기는 룰을 문서에 박아뒀어요. 최근엔 goal 기능으로 작업 목표를 미리 묶어두는 것도 같이 굴려보는 중.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "하네스는 자동화보다 검증 계약이 먼저입니다",
     body:
       "외부 Claude Code 하네스 사례를 볼 때도 도구 숫자보다 auto-select, contract-first QA, filesystem = truth 같은 운영 원칙을 먼저 봅니다. 우리 쪽에는 목표 → 증거 → 검증 → 공개 가능한 요약 순서로만 흡수합니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
 ];
 
-const opsNotes = [
+const opsNotes: TimedNote[] = [
   {
     head: "지식베이스는 원문 저장소가 아니라 작업 방향판입니다",
     body:
       "Hermes 세션 검색, 스킬, 사용자 KB, GitHub/local repo 메타데이터를 묶되 토큰·메일·개인 메시지 원문은 배제합니다. 매일 공개 가능한 변화만 골라 개인 사이트 업데이트 후보로 올립니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "어떤 맥에서 열어도 같은 컨텍스트로 시작합니다",
     body:
       "맥미니와 맥북 사이에서 레포·에이전트 규칙·스킬·검증 루틴이 끊기지 않게 경로와 실행 규칙을 고정합니다. 새 세션은 먼저 KB와 handoff가 아니라 실제 repo 상태부터 확인합니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "완료 선언보다 증거를 먼저 남깁니다",
     body:
       "git diff --check, build, 브라우저 smoke, 로그, 스크린샷처럼 재현 가능한 근거를 completion의 일부로 둡니다. 실패하면 실패 로그에 privacy-safe하게 남기고, 억지 커밋은 하지 않습니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
   {
     head: "리소스 가드도 자동화의 일부입니다",
     body:
       "일일 업데이트는 CPU·메모리·사용량 스냅샷을 먼저 보고 병렬 에이전트 수를 조절합니다. 장기 실행·zombie 후보는 승인 목록으로 분리하고, 실행 중인 프로세스는 사람 승인 없이 끊지 않습니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
+  },
+  {
+    head: "온톨로지의 목적은 실수 재발 방지입니다",
+    body:
+      "OntologyHub는 단순한 공유 메모장이 아니라, observed → authored → pulled → applied → verified 상태를 나눠 다른 기기에서 같은 실수를 반복하지 않게 만드는 장치로 다룹니다.",
+    createdAt: "2026-06-02",
+    updatedAt: "2026-06-02",
   },
 ];
 
@@ -112,13 +146,14 @@ const history = [
 ];
 
 function dateTimeValue(value: string) {
-  return value.replace(".", "-");
+  return value.replace(/\./g, "-");
 }
 
-function DateStamp({ kind, value, label }: { kind: "created" | "updated"; value: string; label: string }) {
+function DateStamp({ kind, value, label }: { kind: "created" | "updated" | "added"; value: string; label: string }) {
+  const text = kind === "created" ? "작성일" : kind === "added" ? "추가일" : "업데이트";
   return (
     <span className="stamp" aria-label={`${label} ${value}`}>
-      {kind} · <time dateTime={dateTimeValue(value)}>{value}</time>
+      {text} · <time dateTime={dateTimeValue(value)}>{value}</time>
     </span>
   );
 }
@@ -156,7 +191,7 @@ export default function App() {
 
         {/* 본업 */}
         <section id="bizagent" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026.05" />
+          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026-06-02" />
           <p className="mb-3 max-w-[64ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             BHSN의 리걸 AI 에이전트예요. 2024년 7월부터 프론트엔드를 단독으로 담당해 왔습니다.
             지금은 Agent 단독 유료 구독이 <strong className="font-semibold text-(--color-ink)">329개 워크스페이스</strong> · <strong className="font-semibold text-(--color-ink)">495개 라이선스</strong>. 참고로 Allibee 플랫폼 전체(Agent + CLM)는 누적 가입 <span className="text-(--color-ink-3)">2,767 워크스페이스 · 10,393 계정</span>이고, 위 Agent 숫자는 그중 유료 구독분입니다.
@@ -178,6 +213,10 @@ export default function App() {
             <h3 className="font-mono text-xs uppercase tracking-[0.24em] text-(--color-moss)">
               · Business Agent React 마이그레이션 · 2026.04 — 현재
             </h3>
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+              <DateStamp kind="added" value="2026-06-02" label="추가일" />
+              <DateStamp kind="updated" value="2026-06-02" label="업데이트" />
+            </div>
             <p className="mt-3 mb-4 max-w-[60ch] text-sm italic text-(--color-ink-3)">
               전환 배경 — 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성.
             </p>
@@ -198,7 +237,7 @@ export default function App() {
             <SectionHead
               chapter="ii · 공방 · AX"
               title="AI 도구 셋업이 어쩌다 본업의 절반이 됐어요."
-              updated="2026.05"
+              updated="2026-06-02"
             />
             <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
               한 AI 도구에 매몰되면 그 도구가 막히는 날이 작업이 멈추는 날이 됩니다. 그래서 도구를 일찍부터 분산하고, 규칙·컨텍스트·검증을 같은 표준으로 묶어서 굴려요.
@@ -212,6 +251,10 @@ export default function App() {
                   </span>
                   <div>
                     <h4 className="text-lg font-bold text-(--color-ink) sm:text-xl">{w.head}</h4>
+                    <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                      <DateStamp kind="added" value={w.createdAt} label="추가일" />
+                      <DateStamp kind="updated" value={w.updatedAt} label="업데이트" />
+                    </div>
                     <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{w.body}</p>
                   </div>
                 </li>
@@ -236,10 +279,10 @@ export default function App() {
 
         {/* Knowledge Ops */}
         <section id="ops" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026.06" />
+          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026-06-02" />
           <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             AI-assisted development는 모델 이름표를 모으는 일이 아니라, 흩어진 문서·결정·반복 질문을 다시 찾을 수 있게 묶는 일입니다.
-            여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.
+            여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 한 기기에서 배운 실패를 다른 기기에서 반복하지 않도록 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.
           </p>
           <div className="space-y-9">
             {opsNotes.map((note, i) => (
@@ -250,6 +293,10 @@ export default function App() {
                 <div>
                   <p className="label-mono mb-1">· 운영 원칙 {String(i + 1).padStart(2, "0")}</p>
                   <h3 className="text-lg font-bold text-(--color-ink) sm:text-xl">{note.head}</h3>
+                  <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                    <DateStamp kind="added" value={note.createdAt} label="추가일" />
+                    <DateStamp kind="updated" value={note.updatedAt} label="업데이트" />
+                  </div>
                   <p className="mt-1.5 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">{note.body}</p>
                 </div>
               </article>

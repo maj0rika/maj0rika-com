@@ -94,8 +94,8 @@ const ANCHOR_GROUPS = Object.freeze([
 ]);
 
 const MASCOT_ASSET = "/majorica-frog"; // official asset family (png/webp); never a hand-drawn SVG.
-const DATE_STAMP_VALUE = /^\d{4}\.(0[1-9]|1[0-2])$/; // YYYY.MM
-const DATE_TIME_VALUE = /^\d{4}-(0[1-9]|1[0-2])$/; // YYYY-MM (the <time dateTime>)
+const DATE_STAMP_VALUE = /^(?:\d{4}\.(0[1-9]|1[0-2])|\d{4}-(0[1-9]|1[0-2])(?:-\d{2})?)$/; // YYYY.MM or YYYY-MM(-DD)
+const DATE_TIME_VALUE = /^\d{4}-(0[1-9]|1[0-2])(?:-\d{2})?$/; // YYYY-MM(-DD) (the <time dateTime>)
 
 // ───────────────────────────── Zone B — check registry ───────────────────────
 // Each check: { id, title, severity:'error'|'warn', run(ctx) -> Finding[] }
@@ -368,11 +368,11 @@ const CHECKS = [
       // Lookbehind on [\w-] skips data-updated / foo-created etc. Dynamic brace
       // stamps (updated={fn(x)}) are not statically checkable, so they are skipped.
       for (const m of f.raw.matchAll(/(?<![\w-])(created|updated)\s*[:=]\s*"([^"]*)"/g)) {
-        if (!DATE_STAMP_VALUE.test(m[2])) out.push(err(`${m[1]} stamp "${m[2]}" is not YYYY.MM`, f.path, lineOf(f.raw, m.index)));
+        if (!DATE_STAMP_VALUE.test(m[2])) out.push(err(`${m[1]} stamp "${m[2]}" is not YYYY.MM or YYYY-MM(-DD)`, f.path, lineOf(f.raw, m.index)));
       }
       for (const m of f.raw.matchAll(/(?<![\w-])dateTime\s*=\s*"([^"]*)"/g)) {
         const v = m[1];
-        if (!DATE_TIME_VALUE.test(v) && !/^\d{4}-\d{2}-\d{2}$/.test(v)) out.push(err(`<time dateTime="${v}"> is not YYYY-MM(-DD)`, f.path, lineOf(f.raw, m.index)));
+        if (!DATE_TIME_VALUE.test(v)) out.push(err(`<time dateTime="${v}"> is not YYYY-MM(-DD)`, f.path, lineOf(f.raw, m.index)));
       }
     }
     return out;
@@ -396,7 +396,7 @@ const CHECKS = [
   check("dates.freshness", "Newest `updated` stamp is not in the future", "warn", (ctx) => {
     const f = ctx.files.app;
     if (!f) return [];
-    const stamps = [...f.raw.matchAll(/\bupdated=("?)(\d{4}\.\d{2})\1/g)].map((m) => m[2]);
+    const stamps = [...f.raw.matchAll(/\bupdated=("?)(\d{4}[.-]\d{2}(?:-\d{2})?)\1/g)].map((m) => m[2].replace(/\./g, "-").slice(0, 7));
     if (!stamps.length) return [];
     const newest = stamps.sort().at(-1);
     const now = new Date();
