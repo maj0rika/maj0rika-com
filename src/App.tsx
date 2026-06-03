@@ -237,11 +237,10 @@ export default function App() {
             <SectionHead
               chapter="ii · 공방 · AX"
               title="AI 도구 셋업이 어쩌다 본업의 절반이 됐어요."
-              updated="2026-06-02"
+              updated="2026-06-04"
             />
             <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
               한 AI 도구에 매몰되면 그 도구가 막히는 날이 작업이 멈추는 날이 됩니다. 그래서 도구를 일찍부터 분산하고, 규칙·컨텍스트·검증을 같은 표준으로 묶어서 굴려요.
-              <span className="block mt-2 text-(--color-ink-3)">(검색은 최근 Perplexity에서 Grok으로 갈아탔습니다 — 커뮤니티 기반 실시간성이 압도적이라서.)</span>
             </p>
             <ol className="space-y-9">
               {workshop.map((w, i) => (
