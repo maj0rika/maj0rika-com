@@ -41,7 +41,14 @@ const workshop: TimedNote[] = [
     body:
       "복잡한 설계는 ralplan과 deep-interview로 깊게 파고, 가벼운 건 Codex 5.5 fast medium이나 Cursor Composer로 끊어요. 큰 모델에 작은 문제 던지는 게 시간·비용 양쪽에서 가장 큰 낭비라서요.",
     createdAt: "2026-06-02",
-    updatedAt: "2026-06-02",
+    updatedAt: "2026-06-05",
+  },
+  {
+    head: "기본 모델과 화면 분석 모델을 나눕니다",
+    body:
+      "상시 대화와 가벼운 정리는 빠른 모델에 맡기고, 마우스 조작·스크린샷 분석처럼 화면 이해가 필요한 세션만 vision-capable 모델로 올립니다. 속도와 정확도를 한 모델에 모두 맡기지 않는 쪽이 운영이 안정적입니다.",
+    createdAt: "2026-06-05",
+    updatedAt: "2026-06-05",
   },
   {
     head: "어디서 열어도 규칙·컨텍스트가 따라온다",
@@ -237,7 +244,7 @@ export default function App() {
             <SectionHead
               chapter="ii · 공방 · AX"
               title="AI 도구 셋업이 어쩌다 본업의 절반이 됐어요."
-              updated="2026-06-04"
+              updated="2026-06-05"
             />
             <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
               한 AI 도구에 매몰되면 그 도구가 막히는 날이 작업이 멈추는 날이 됩니다. 그래서 도구를 일찍부터 분산하고, 규칙·컨텍스트·검증을 같은 표준으로 묶어서 굴려요.
