@@ -111,7 +111,7 @@ maj0rika-com/
 
 ### 사이드 프로젝트 (현재 사이트에 노출)
 - **AI 가계부** — Next.js + Supabase + Capacitor · 데모 `https://household-account-book-tawny.vercel.app` (test@test.com / test1234)
-- ※ **FitMe/DreamRealm는 사이트에서 제거됨** (이력서에서도 빠짐 — 사용자가 정리)
+- ※ 공개 반영 지시가 없는 비공개/미공개 프로젝트명은 사이트와 이력서에서 제외함
 
 ### 데모/접근
 - Business Agent: `https://demo.allibee.ai` (`dummy@dummy.com` / `testtest1!`)

@@ -4,7 +4,7 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
-업데이트: 2026-06-05
+업데이트: 2026-06-08
 
 ---
 
@@ -115,6 +115,20 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - 자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현, 웹+모바일 단일 코드베이스(Capacitor)로 운영
 - 데모: https://household-account-book-tawny.vercel.app · 테스트 계정 `test@test.com` / `test1234`
+
+**mac-ai-orphan-cleaner** — macOS AI helper cleanup · Shell · AI Tooling Ops
+
+추가일: 2026-06-08 · 업데이트: 2026-06-08
+
+- Codex, Claude Code, Cursor, MCP toolchain이 남긴 macOS AI helper 프로세스를 안전하게 정리하는 공개 운영 도구
+- GitHub: https://github.com/maj0rika/mac-ai-orphan-cleaner
+
+**agent-skills** — AI coding agent engineering playbook · Shell · Agent Workflow
+
+추가일: 2026-06-08 · 업데이트: 2026-06-08
+
+- AI coding agent가 재사용할 수 있는 production-grade engineering skill과 운영 규칙을 모아두는 공개 지식 자산
+- GitHub: https://github.com/maj0rika/agent-skills
 
 ---
 

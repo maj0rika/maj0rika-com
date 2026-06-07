@@ -130,6 +130,28 @@ const builds = [
     created: "2025.11",
     updated: "2026.05",
   },
+  {
+    name: "mac-ai-orphan-cleaner",
+    tag: "공개 도구",
+    desc:
+      "Codex, Claude Code, Cursor, MCP toolchain이 남긴 macOS AI helper 프로세스를 안전하게 정리하는 Shell 기반 운영 도구.",
+    stack: "Shell · macOS · AI Tooling Ops",
+    link: "https://github.com/maj0rika/mac-ai-orphan-cleaner",
+    note: "공개 GitHub repo 메타데이터 기반으로 추가",
+    created: "2026-04",
+    updated: "2026-06-08",
+  },
+  {
+    name: "agent-skills",
+    tag: "공개 지식 자산",
+    desc:
+      "AI coding agent가 재사용할 수 있는 production-grade engineering skill과 운영 규칙을 모아두는 공개 저장소.",
+    stack: "Shell · Agent Workflow · Engineering Playbook",
+    link: "https://github.com/maj0rika/agent-skills",
+    note: "공개 GitHub repo 메타데이터 기반으로 추가",
+    created: "2026-04",
+    updated: "2026-06-08",
+  },
 ];
 
 const history = [
@@ -312,7 +334,7 @@ export default function App() {
 
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026.05" />
+          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-08" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
