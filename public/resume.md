@@ -4,7 +4,7 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
-업데이트: 2026-06-08
+업데이트: 2026-06-09
 
 ---
 
@@ -115,6 +115,27 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - 자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현, 웹+모바일 단일 코드베이스(Capacitor)로 운영
 - 데모: https://household-account-book-tawny.vercel.app · 테스트 계정 `test@test.com` / `test1234`
+
+**vapor-compliance-workbench** — compliance UI workbench · TypeScript · React
+
+추가일: 2026-06-09 · 업데이트: 2026-06-09
+
+- 프롬프트 입력·검증 컴포넌트의 색 대비와 접근성 역할을 점검하며, compliance UI를 작은 workbench 단위로 다듬는 공개 실험
+- GitHub: https://github.com/maj0rika/vapor-compliance-workbench
+
+**dreamrealm** — AI persistent world prototype · TypeScript
+
+추가일: 2026-06-09 · 업데이트: 2026-06-09
+
+- AI 기반 영속적 세계 구축 아이디어를 TypeScript로 탐색한 공개 실험. 세계관·상태·사용자 상호작용을 제품 화면으로 옮기는 방향을 검토
+- GitHub: https://github.com/maj0rika/dreamrealm
+
+**ht-exercise-counter** — exercise tracking utility · Python
+
+추가일: 2026-06-09 · 업데이트: 2026-06-09
+
+- 운동 인증 카운팅을 자동화하기 위한 Python 기반 공개 유틸리티. 반복 기록을 사람이 검수 가능한 숫자와 로그로 바꾸는 작은 도구
+- GitHub: https://github.com/maj0rika/ht-exercise-counter
 
 **mac-ai-orphan-cleaner** — macOS AI helper cleanup · Shell · AI Tooling Ops
 

@@ -131,6 +131,39 @@ const builds = [
     updated: "2026.05",
   },
   {
+    name: "vapor-compliance-workbench",
+    tag: "공개 실험",
+    desc:
+      "프롬프트 입력·검증 컴포넌트의 색 대비와 접근성 역할을 점검하며, compliance UI를 작은 workbench 단위로 다듬는 TypeScript 실험.",
+    stack: "TypeScript · React · Accessibility · Compliance UI",
+    link: "https://github.com/maj0rika/vapor-compliance-workbench",
+    note: "공개 GitHub repo 메타데이터 기반으로 추가",
+    created: "2026-06-09",
+    updated: "2026-06-09",
+  },
+  {
+    name: "dreamrealm",
+    tag: "공개 실험",
+    desc:
+      "AI 기반 영속적 세계 구축 아이디어를 TypeScript로 탐색한 공개 실험. 세계관·상태·사용자 상호작용을 제품 화면으로 옮기는 방향을 검토합니다.",
+    stack: "TypeScript · AI Product Prototype · Worldbuilding UX",
+    link: "https://github.com/maj0rika/dreamrealm",
+    note: "공개 GitHub repo 설명 기반으로 추가",
+    created: "2026-06-09",
+    updated: "2026-06-09",
+  },
+  {
+    name: "ht-exercise-counter",
+    tag: "공개 자동화",
+    desc:
+      "운동 인증 카운팅을 자동화하기 위한 Python 기반 공개 유틸리티. 반복 기록을 사람이 검수 가능한 숫자와 로그로 바꾸는 작은 도구입니다.",
+    stack: "Python · Automation · Tracking Utility",
+    link: "https://github.com/maj0rika/ht-exercise-counter",
+    note: "공개 GitHub repo 메타데이터 기반으로 추가",
+    created: "2026-06-09",
+    updated: "2026-06-09",
+  },
+  {
     name: "mac-ai-orphan-cleaner",
     tag: "공개 도구",
     desc:
@@ -334,7 +367,7 @@ export default function App() {
 
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-08" />
+          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-09" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
