@@ -85,9 +85,11 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - 운영 중인 SvelteKit 제품을 **React 19 + Vite + Turborepo 모노레포** 구조로 단계적 전환
 - Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영
+- 처음엔 "AI로 전환 속도 좀 올려보자"에 가까웠는데, 운영 제품을 옮기다 보니 AI가 맞는 말투로 틀릴 때가 제일 무섭다는 걸 배움
+- 그래서 결과를 바로 믿지 않고 소스·테스트·브라우저를 같이 보게 만들었고, 자주 터지는 실수는 프롬프트 규칙과 체크리스트에 적어두는 방식으로 바꿔감
 - 라우팅·페이지 셸·i18n·hosted mode를 분리하며 기존 기능을 신규 React 구조로 재구성
-- golden evidence·parity smoke·브라우저 실측·외부 리뷰 게이트로 기존 SvelteKit 동작과 React 구현 간 패리티를 검증해 핵심 화면 회귀 방지
-- 반복 가능한 마이그레이션 패턴을 프롬프트 규칙·체크리스트·검증 절차로 표준화
+- 기존 SvelteKit 화면과 새 React 화면을 나란히 비교하며, "겉보기엔 비슷한데 실제로는 다른" 부분을 테스트와 화면 확인으로 잡아냄
+- 반복되는 마이그레이션 작업은 다음에도 다시 써먹을 수 있게 프롬프트 규칙·체크리스트·검증 순서로 정리
 
 #### CLM — 계약 관리 솔루션 Frontend · 2023.08 ~ 2024.07
 
@@ -120,7 +122,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 추가일: 2026-06-09 · 업데이트: 2026-06-18
 
-- 디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 공개 실험. LLM 검증의 거짓 PASS를 규칙 엔진으로 줄이는 과정을 다룸
+- 디자인시스템이 화면에 제대로 묻었는지 자동으로 확인해보는 공개 실험. LLM이 "됐습니다!" 하고 지나친 부분을 규칙으로 한 번 더 찔러봄
 - GitHub: https://github.com/maj0rika/vapor-compliance-workbench
 
 **dreamrealm** — AI persistent world prototype · TypeScript
