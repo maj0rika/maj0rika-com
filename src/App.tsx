@@ -14,10 +14,10 @@ const bizagent = [
 ];
 
 const migration = [
-  "운영 중인 SvelteKit 제품을 React + Vite + Turborepo 모노레포로 단계적 전환",
+  "운영 중인 SvelteKit 제품을 React 19 + Vite + Turborepo 모노레포로 단계적 전환",
   "Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영",
   "라우팅·페이지 셸·i18n·hosted mode를 분리하며 기존 기능을 신규 React 구조로 재구성",
-  "golden evidence · parity smoke · 브라우저 기반 검증으로 SvelteKit ↔ React 패리티 검증, 핵심 화면 회귀 방지",
+  "golden evidence · parity smoke · 브라우저 실측 · 외부 리뷰 게이트로 SvelteKit ↔ React 패리티 검증, 핵심 화면 회귀 방지",
   "반복 가능한 마이그레이션 패턴을 프롬프트 규칙 · 체크리스트 · 검증 절차로 표준화",
 ];
 
@@ -134,12 +134,12 @@ const builds = [
     name: "vapor-compliance-workbench",
     tag: "공개 실험",
     desc:
-      "프롬프트 입력·검증 컴포넌트의 색 대비와 접근성 역할을 점검하며, compliance UI를 작은 workbench 단위로 다듬는 TypeScript 실험.",
+      "디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 TypeScript 실험. LLM 검증의 거짓 PASS를 규칙 엔진으로 줄이는 과정을 다룹니다.",
     stack: "TypeScript · React · Accessibility · Compliance UI",
     link: "https://github.com/maj0rika/vapor-compliance-workbench",
-    note: "공개 GitHub repo 메타데이터 기반으로 추가",
+    note: "공개 GitHub profile README 기반으로 보강",
     created: "2026-06-09",
-    updated: "2026-06-09",
+    updated: "2026-06-18",
   },
   {
     name: "dreamrealm",
@@ -253,7 +253,7 @@ export default function App() {
 
         {/* 본업 */}
         <section id="bizagent" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026-06-02" />
+          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026-06-18" />
           <p className="mb-3 max-w-[64ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             BHSN의 리걸 AI 에이전트예요. 2024년 7월부터 프론트엔드를 단독으로 담당해 왔습니다.
             지금은 Agent 단독 유료 구독이 <strong className="font-semibold text-(--color-ink)">329개 워크스페이스</strong> · <strong className="font-semibold text-(--color-ink)">495개 라이선스</strong>. 참고로 Allibee 플랫폼 전체(Agent + CLM)는 누적 가입 <span className="text-(--color-ink-3)">2,767 워크스페이스 · 10,393 계정</span>이고, 위 Agent 숫자는 그중 유료 구독분입니다.
@@ -277,7 +277,7 @@ export default function App() {
             </h3>
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
               <DateStamp kind="added" value="2026-06-02" label="추가일" />
-              <DateStamp kind="updated" value="2026-06-02" label="업데이트" />
+              <DateStamp kind="updated" value="2026-06-18" label="업데이트" />
             </div>
             <p className="mt-3 mb-4 max-w-[60ch] text-sm italic text-(--color-ink-3)">
               전환 배경 — 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성.
@@ -367,7 +367,7 @@ export default function App() {
 
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-09" />
+          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-18" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">

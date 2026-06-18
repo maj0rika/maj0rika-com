@@ -4,7 +4,7 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
-업데이트: 2026-06-09
+업데이트: 2026-06-18
 
 ---
 
@@ -25,7 +25,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 - Agent가 속한 **Allibee 플랫폼**(Business Agent + CLM)은 누적 가입 워크스페이스 **2,767** · 계정 **10,393** 규모로 운영되며 (Agent 유료 구독분은 위 숫자), 율촌·CJ 등 엔터프라이즈 고객사 납품 과정에서 얻은 **실사용 피드백을 SaaS 공통 제품 기능으로 반영**해 현장 요구를 제품 개선으로 연결
 - SSE 기반 LLM 스트리밍과 사내 REF 링크 규격, Markdown tokenizer 확장으로 답변·출처·원문 조항을 연결하는 **출처 검증형 RAG UX** 구현
 - Claude Code · Codex · Cursor · MCP 기반 **AI-assisted 개발 체계**를 구성해 설계·구현·리뷰·검증 단계를 분리 운영
-- 운영 중인 SvelteKit 제품의 React + Vite + Turborepo 전환에 위 체계를 적용해 변경 영향도 분석·회귀 방지 검증 루틴 구축
+- 운영 중인 SvelteKit 제품의 React 19 + Vite + Turborepo 전환에 위 체계를 적용해 변경 영향도 분석·회귀 방지 검증 루틴 구축
 - SvelteKit 모노레포의 Business Agent 기능 패키지(`packages/service`)에서 통합 검색·법령 딥링크·PDF/OCR 뷰어·워크플로우·export 플로우를 주도적으로 개발 *(1,300+ commits)*
 
 ---
@@ -79,14 +79,14 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 #### Business Agent React 마이그레이션 · 2026.04 ~ 현재
 
-추가일: 2026-06-02 · 업데이트: 2026-06-02
+추가일: 2026-06-02 · 업데이트: 2026-06-18
 
 *전환 배경: 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성*
 
-- 운영 중인 SvelteKit 제품을 **React + Vite + Turborepo 모노레포** 구조로 단계적 전환
+- 운영 중인 SvelteKit 제품을 **React 19 + Vite + Turborepo 모노레포** 구조로 단계적 전환
 - Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영
 - 라우팅·페이지 셸·i18n·hosted mode를 분리하며 기존 기능을 신규 React 구조로 재구성
-- golden evidence·parity smoke·브라우저 기반 검증 절차로 기존 SvelteKit 동작과 React 구현 간 패리티를 검증해 핵심 화면 회귀 방지
+- golden evidence·parity smoke·브라우저 실측·외부 리뷰 게이트로 기존 SvelteKit 동작과 React 구현 간 패리티를 검증해 핵심 화면 회귀 방지
 - 반복 가능한 마이그레이션 패턴을 프롬프트 규칙·체크리스트·검증 절차로 표준화
 
 #### CLM — 계약 관리 솔루션 Frontend · 2023.08 ~ 2024.07
@@ -118,9 +118,9 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 **vapor-compliance-workbench** — compliance UI workbench · TypeScript · React
 
-추가일: 2026-06-09 · 업데이트: 2026-06-09
+추가일: 2026-06-09 · 업데이트: 2026-06-18
 
-- 프롬프트 입력·검증 컴포넌트의 색 대비와 접근성 역할을 점검하며, compliance UI를 작은 workbench 단위로 다듬는 공개 실험
+- 디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 공개 실험. LLM 검증의 거짓 PASS를 규칙 엔진으로 줄이는 과정을 다룸
 - GitHub: https://github.com/maj0rika/vapor-compliance-workbench
 
 **dreamrealm** — AI persistent world prototype · TypeScript
