@@ -125,23 +125,23 @@ const builds = [
     name: "AI 가계부",
     tag: "운영 중",
     desc:
-      "자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현. 웹+모바일 단일 코드베이스(Capacitor)로 운영.",
+      "자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅을 구현. Origin 검증, rate limit, AES-256-GCM 필드 암호화까지 붙여 웹+모바일 단일 코드베이스(Capacitor)로 운영.",
     stack: "Next.js · Supabase · Capacitor · MiniMax / Fireworks / Kimi",
     link: "https://household-account-book-tawny.vercel.app",
     note: "테스트 계정 test@test.com / test1234",
     created: "2025.11",
-    updated: "2026.05",
+    updated: "2026-06-24",
   },
   {
     name: "vapor-compliance-workbench",
     tag: "공개 실험",
     desc:
-      "디자인시스템이 화면에 제대로 묻었는지 자동으로 확인해보는 TypeScript 실험. LLM이 '됐습니다!' 하고 지나친 부분을 규칙으로 한 번 더 찔러봅니다.",
+      "디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 TypeScript 실험. LLM의 거짓 PASS를 발견한 뒤 규칙 엔진으로 피벗한 과정을 담았습니다.",
     stack: "TypeScript · React · Accessibility · Compliance UI",
     link: "https://github.com/maj0rika/vapor-compliance-workbench",
     note: "공개 GitHub profile README 기반으로 보강",
     created: "2026-06-09",
-    updated: "2026-06-18",
+    updated: "2026-06-24",
   },
   {
     name: "dreamrealm",
@@ -369,7 +369,7 @@ export default function App() {
 
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-18" />
+          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-24" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">

@@ -4,7 +4,7 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
-업데이트: 2026-06-18
+업데이트: 2026-06-24
 
 ---
 
@@ -113,16 +113,16 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 **AI 가계부** — 자연어·이미지 입력 가계부 · Next.js · Supabase · Capacitor
 
-추가일: 2026-06-02 · 업데이트: 2026-06-02
+추가일: 2026-06-02 · 업데이트: 2026-06-24
 
-- 자연어·이미지 기반 소비 내역 입력과 다중 LLM 라우팅 구현, 웹+모바일 단일 코드베이스(Capacitor)로 운영
+- 자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅 구현, Origin 검증·rate limit·AES-256-GCM 필드 암호화를 적용해 웹+모바일 단일 코드베이스(Capacitor)로 운영
 - 데모: https://household-account-book-tawny.vercel.app · 테스트 계정 `test@test.com` / `test1234`
 
 **vapor-compliance-workbench** — compliance UI workbench · TypeScript · React
 
-추가일: 2026-06-09 · 업데이트: 2026-06-18
+추가일: 2026-06-09 · 업데이트: 2026-06-24
 
-- 디자인시스템이 화면에 제대로 묻었는지 자동으로 확인해보는 공개 실험. LLM이 "됐습니다!" 하고 지나친 부분을 규칙으로 한 번 더 찔러봄
+- 디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 공개 실험. LLM의 거짓 PASS를 발견한 뒤 규칙 엔진으로 피벗한 과정을 담음
 - GitHub: https://github.com/maj0rika/vapor-compliance-workbench
 
 **dreamrealm** — AI persistent world prototype · TypeScript
