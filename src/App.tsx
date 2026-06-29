@@ -118,6 +118,13 @@ const opsNotes: TimedNote[] = [
     createdAt: "2026-06-02",
     updatedAt: "2026-06-02",
   },
+  {
+    head: "작은 일에는 작은 검증 예산을 둡니다",
+    body:
+      "모든 요청을 고위험 작업처럼 깊게 파면 속도가 망가집니다. 작업 크기와 위험도에 따라 읽을 컨텍스트, 테스트 강도, 증거 수준을 먼저 정하고 필요한 때만 깊게 들어갑니다.",
+    createdAt: "2026-06-30",
+    updatedAt: "2026-06-30",
+  },
 ];
 
 const builds = [
@@ -342,7 +349,7 @@ export default function App() {
 
         {/* Knowledge Ops */}
         <section id="ops" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026-06-02" />
+          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026-06-30" />
           <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             AI-assisted development는 모델 이름표를 모으는 일이 아니라, 흩어진 문서·결정·반복 질문을 다시 찾을 수 있게 묶는 일입니다.
             여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 한 기기에서 배운 실패를 다른 기기에서 반복하지 않도록 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.

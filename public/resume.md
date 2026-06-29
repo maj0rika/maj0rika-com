@@ -4,7 +4,7 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
-업데이트: 2026-06-24
+업데이트: 2026-06-30
 
 ---
 
@@ -14,7 +14,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - **AI 제품 UX** — BHSN 리걸 AI SaaS Business Agent(Allibee) 프론트엔드를 단독 담당. 실시간 챗·통합 검색·출처 검증·PDF/OCR 뷰어·워크플로우 UX를 1개월 PoC부터 유료 엔터프라이즈 제품까지 제품화
 - **AI-assisted 개발** — Claude Code · Codex · Cursor · MCP로 설계·구현·리뷰·검증 단계를 분리한 개발 체계를 직접 구성·운영
-- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리. contract-first QA와 filesystem evidence, usage/resource guard, cross-device mistake immunity를 운영 원칙으로 둠
+- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리. contract-first QA와 filesystem evidence, task-size routing, cross-device mistake immunity를 운영 원칙으로 둠
 - **현재** — SvelteKit 프로덕션 경험이 가장 깊고, 운영 제품의 React + Vite + Turborepo 전환을 진행 중
 
 ---
@@ -33,7 +33,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 ## Skills
 
 - **AX / AI-assisted Engineering:** Claude Code · Codex · Cursor · MCP · Hermes Agent · AI Code Review · Change Impact Analysis · Parity Verification
-- **Knowledge Ops:** Session Search · Skills · Cron Automation · Public-safe KB Summarization · Contract-first QA · Filesystem Evidence · Usage/Resource Guard
+- **Knowledge Ops:** Session Search · Skills · Cron Automation · Public-safe KB Summarization · Contract-first QA · Filesystem Evidence · Task-size Routing
 - **AI Product UX:** LLM Streaming(SSE) · RAG Result Rendering · Citation / Source UX · Multi-LLM Routing UX · Agentic Workflow UX
 - **Frontend:** TypeScript · SvelteKit · React · Next.js · Vite · Turborepo · Tailwind CSS
 - **Document UX:** PDF.js · OCR BBox Overlay · Markdown Parser Customization · DOCX / PDF Export
@@ -44,7 +44,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 ## AX / AI-assisted Engineering
 
-추가일: 2026-06-02 · 업데이트: 2026-06-05
+추가일: 2026-06-02 · 업데이트: 2026-06-30
 
 - Claude Code · Codex · Cursor · MCP를 조합해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 개발 워크플로우 구성
 - Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기와 에이전트 사이의 작업 컨텍스트를 이어가는 public-safe knowledge ops 운영
@@ -54,6 +54,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 - 상시 대화/가벼운 정리는 빠른 모델로 처리하고, 마우스 조작·스크린샷 분석처럼 화면 이해가 필요한 세션은 vision-capable 모델로 분리해 속도와 정확도를 함께 관리
 - 반복되는 구현·검증 패턴을 템플릿·체크리스트·프롬프트 규칙으로 표준화해 재사용 가능한 개발 프로세스로 전환
 - 외부 Claude Code 하네스 사례를 리서치해 auto-select, contract-first QA, filesystem-as-truth, usage gate 같은 운영 패턴을 내 워크플로우에 맞게 선별 흡수
+- 작은 수정과 고위험 변경을 같은 깊이로 다루지 않도록 작업 크기·위험도별 컨텍스트 탐색량, 테스트 강도, 증거 수준을 먼저 정하는 Fast Path 운영 원칙을 추가
 
 ---
 
