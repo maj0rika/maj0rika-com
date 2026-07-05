@@ -367,6 +367,9 @@ export default function App() {
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
           <SectionHead chapter="iv · side" title="공개 실험" updated="2026-07-05" />
+          <p className="mb-10 max-w-[62ch] text-[0.98rem] leading-[1.8] text-(--color-ink-2)">
+            아래 프로젝트들은 현재 지속 운영 중인 서비스라기보다, 아이디어와 구현 과정을 공개해 둔 실험이자 아카이브입니다.
+          </p>
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
