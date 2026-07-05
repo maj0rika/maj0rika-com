@@ -108,7 +108,7 @@ const MUTATIONS = [
   { name: "focus outline removed", file: "src/styles.css",
     fn: (s) => s.replace("outline: 2px dashed var(--color-ink);", "outline: none;"), id: "a11y.css_hooks" },
   { name: "malformed date stamp (1-digit month)", file: "src/App.tsx",
-    fn: (s) => s.replace('title="개인 프로젝트"', 'title="개인 프로젝트" updated="2026.5"'), id: "dates.stamp_format" },
+    fn: (s) => s.replace('title="공개 실험"', 'title="공개 실험" updated="2026.5"'), id: "dates.stamp_format" },
   // multi-file: break a KPI in resume.html (not App) to exercise the per-file loop
   { name: "KPI broken in resume.html (2,767)", file: "public/resume.html",
     fn: (s) => s.replace("2,767", "2767000"), id: "facts.platform.workspaces" },
@@ -133,7 +133,7 @@ const NEGATIVES = [
   { name: "data-updated attr is not a date stamp", file: "src/App.tsx",
     fn: (s) => s.replace('id="bizagent"', 'id="bizagent" data-updated="build-1234"'), notId: "dates.stamp_format" },
   { name: "dynamic updated={expr} is skipped (not a literal)", file: "src/App.tsx",
-    fn: (s) => s.replace('title="개인 프로젝트"', 'title="개인 프로젝트" updated={meta}'), notId: "dates.stamp_format" },
+    fn: (s) => s.replace('title="공개 실험"', 'title="공개 실험" updated={meta}'), notId: "dates.stamp_format" },
   { name: "html lang with extra dir attr stays valid", file: "index.html",
     fn: (s) => s.replace('<html lang="ko">', '<html lang="ko" dir="ltr">'), notId: "a11y.html_lang" },
   { name: "resume <main> attribute reorder stays valid", file: "public/resume.html",

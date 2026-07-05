@@ -25,7 +25,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 - Agent가 속한 **Allibee 플랫폼**(Business Agent + CLM)은 누적 가입 워크스페이스 **2,767** · 계정 **10,393** 규모로 운영되며 (Agent 유료 구독분은 위 숫자), 율촌·CJ 등 엔터프라이즈 고객사 납품 과정에서 얻은 **실사용 피드백을 SaaS 공통 제품 기능으로 반영**해 현장 요구를 제품 개선으로 연결
 - SSE 기반 LLM 스트리밍과 사내 REF 링크 규격, Markdown tokenizer 확장으로 답변·출처·원문 조항을 연결하는 **출처 검증형 RAG UX** 구현
 - Claude Code · Codex · Cursor · MCP 기반 **AI-assisted 개발 체계**를 구성해 설계·구현·리뷰·검증 단계를 분리 운영
-- 운영 중인 SvelteKit 제품의 React 19 + Vite + Turborepo 전환에 위 체계를 적용해 변경 영향도 분석·회귀 방지 검증 루틴 구축
+- SvelteKit 제품의 React 19 + Vite + Turborepo 전환에 위 체계를 적용해 변경 영향도 분석·회귀 방지 검증 루틴 구축
 - SvelteKit 모노레포의 Business Agent 기능 패키지(`packages/service`)에서 통합 검색·법령 딥링크·PDF/OCR 뷰어·워크플로우·export 플로우를 주도적으로 개발 *(1,300+ commits)*
 
 ---
@@ -84,7 +84,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 *전환 배경: 설치형(온프레미스) 엔터프라이즈 도입 가속 · 모바일 디자인 대응 · React 인력 확보 및 인수인계 용이성*
 
-- 운영 중인 SvelteKit 제품을 **React 19 + Vite + Turborepo 모노레포** 구조로 단계적 전환
+- SvelteKit 제품을 **React 19 + Vite + Turborepo 모노레포** 구조로 단계적 전환
 - Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영
 - 처음엔 "AI로 전환 속도 좀 올려보자"에 가까웠는데, 운영 제품을 옮기다 보니 AI가 맞는 말투로 틀릴 때가 제일 무섭다는 걸 배움
 - 그래서 결과를 바로 믿지 않고 소스·테스트·브라우저를 같이 보게 만들었고, 자주 터지는 실수는 프롬프트 규칙과 체크리스트에 적어두는 방식으로 바꿔감
@@ -118,13 +118,6 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - 자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅 구현, Origin 검증·rate limit·AES-256-GCM 필드 암호화를 적용해 웹+모바일 단일 코드베이스(Capacitor)로 운영
 - 데모: https://household-account-book-tawny.vercel.app · 테스트 계정 `test@test.com` / `test1234`
-
-**vapor-compliance-workbench** — compliance UI workbench · TypeScript · React
-
-추가일: 2026-06-09 · 업데이트: 2026-06-24
-
-- 디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 공개 실험. LLM의 거짓 PASS를 발견한 뒤 규칙 엔진으로 피벗한 과정을 담음
-- GitHub: https://github.com/maj0rika/vapor-compliance-workbench
 
 **dreamrealm** — AI persistent world prototype · TypeScript
 

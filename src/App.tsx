@@ -14,7 +14,7 @@ const bizagent = [
 ];
 
 const migration = [
-  "운영 중인 SvelteKit 제품을 React 19 + Vite + Turborepo 모노레포로 단계적 전환",
+  "SvelteKit 제품을 React 19 + Vite + Turborepo 모노레포로 단계적 전환",
   "Claude Code · Codex · Cursor · MCP를 활용해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 마이그레이션 프로세스 운영",
   "처음엔 'AI로 전환 속도 좀 올려보자'에 가까웠는데, 운영 제품을 옮기다 보니 AI가 맞는 말투로 틀릴 때가 제일 무섭다는 걸 배움",
   "그래서 결과를 바로 믿지 않고 소스·테스트·브라우저를 같이 보게 만들었고, 자주 터지는 실수는 프롬프트 규칙과 체크리스트에 적어두는 방식으로 바꿔감",
@@ -130,7 +130,7 @@ const opsNotes: TimedNote[] = [
 const builds = [
   {
     name: "AI 가계부",
-    tag: "운영 중",
+    tag: "공개 실험",
     desc:
       "자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅을 구현. Origin 검증, rate limit, AES-256-GCM 필드 암호화까지 붙여 웹+모바일 단일 코드베이스(Capacitor)로 운영.",
     stack: "Next.js · Supabase · Capacitor · MiniMax / Fireworks / Kimi",
@@ -139,17 +139,7 @@ const builds = [
     created: "2025.11",
     updated: "2026-06-24",
   },
-  {
-    name: "vapor-compliance-workbench",
-    tag: "공개 실험",
-    desc:
-      "디자인시스템 적용 품질을 7개 결정론적 게이트로 감사하는 TypeScript 실험. LLM의 거짓 PASS를 발견한 뒤 규칙 엔진으로 피벗한 과정을 담았습니다.",
-    stack: "TypeScript · React · Accessibility · Compliance UI",
-    link: "https://github.com/maj0rika/vapor-compliance-workbench",
-    note: "공개 GitHub profile README 기반으로 보강",
-    created: "2026-06-09",
-    updated: "2026-06-24",
-  },
+
   {
     name: "dreamrealm",
     tag: "공개 실험",
@@ -254,7 +244,7 @@ export default function App() {
             <li><a className="note-index__link" href="#bizagent">본업 — 리걸 AI SaaS</a></li>
             <li><a className="note-index__link" href="#workshop">공방 — AI 도구 셋업</a></li>
             <li><a className="note-index__link" href="#ops">운영 — 컨텍스트·검증</a></li>
-            <li><a className="note-index__link" href="#builds">개인 프로젝트</a></li>
+            <li><a className="note-index__link" href="#builds">공개 실험</a></li>
             <li><a className="note-index__link" href="#history">이력 7년</a></li>
             <li><a className="note-index__link" href="#knock">연락</a></li>
           </ol>
@@ -333,7 +323,7 @@ export default function App() {
 
             <aside className="mt-12 space-y-3 border-l-2 border-(--color-moss-light) pl-5 text-[0.95rem] leading-[1.8] text-(--color-ink-2)">
               <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-(--color-moss)">
-                · 지금 운영 중 · 다음 시도
+                · 지금 다루는 것 · 다음 시도
               </p>
               <p>
                 개인 맥미니에 학습형 에이전트 <strong className="font-semibold text-(--color-ink)">Hermes</strong>를 띄워 세션 검색·스킬·크론 작업을 계속 축적하고 있습니다.
@@ -376,7 +366,7 @@ export default function App() {
 
         {/* Side Projects */}
         <section id="builds" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iv · side" title="개인 프로젝트" updated="2026-06-24" />
+          <SectionHead chapter="iv · side" title="공개 실험" updated="2026-07-05" />
           <div className="space-y-10">
             {builds.map((p, i) => (
               <article key={p.name} className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7">
