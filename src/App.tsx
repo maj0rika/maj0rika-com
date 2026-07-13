@@ -125,6 +125,13 @@ const opsNotes: TimedNote[] = [
     createdAt: "2026-06-30",
     updatedAt: "2026-06-30",
   },
+  {
+    head: "검증을 통과해야 빌드·배포로 갑니다",
+    body:
+      "포트폴리오 자동 업데이트는 읽기 전용 콘텐츠 검증을 먼저 실행하고, 실패하면 빌드·배포를 중단합니다.",
+    createdAt: "2026-07-14",
+    updatedAt: "2026-07-14",
+  },
 ];
 
 const builds = [
@@ -339,7 +346,7 @@ export default function App() {
 
         {/* Knowledge Ops */}
         <section id="ops" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026-06-30" />
+          <SectionHead chapter="iii · 운영" title="컨텍스트를 쌓되, 공개 가능한 것만 밖으로 보냅니다." updated="2026-07-14" />
           <p className="mb-10 max-w-[62ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             AI-assisted development는 모델 이름표를 모으는 일이 아니라, 흩어진 문서·결정·반복 질문을 다시 찾을 수 있게 묶는 일입니다.
             여러 기기와 여러 에이전트가 같은 맥락에서 출발하고, 한 기기에서 배운 실패를 다른 기기에서 반복하지 않도록 결과는 사람이 검증 가능한 증거로 다시 묶어야 합니다.

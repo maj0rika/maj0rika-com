@@ -44,9 +44,10 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 ## AX / AI-assisted Engineering
 
-추가일: 2026-06-02 · 업데이트: 2026-06-30
+추가일: 2026-06-02 · 업데이트: 2026-07-14
 
 - Claude Code · Codex · Cursor · MCP를 조합해 설계·구현·리뷰·검증 단계를 분리한 AI-assisted 개발 워크플로우 구성
+- 포트폴리오 자동 업데이트는 읽기 전용 콘텐츠 검증을 먼저 실행하고, 실패하면 빌드·배포를 중단
 - Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기와 에이전트 사이의 작업 컨텍스트를 이어가는 public-safe knowledge ops 운영
 - OntologyHub를 단순 공유 메모가 아니라 한 기기에서 배운 실패를 다른 기기에서 반복하지 않게 만드는 guardrail/verification 루프로 설계
 - MCP 기반 심볼 탐색과 변경 영향도 분석을 활용해 대규모 코드베이스에서 수정 범위·의존성·회귀 가능성을 사전 점검
