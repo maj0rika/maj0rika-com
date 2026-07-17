@@ -142,7 +142,7 @@ const builds = [
       "자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅을 구현. Origin 검증, rate limit, AES-256-GCM 필드 암호화까지 붙여 웹+모바일 단일 코드베이스(Capacitor)로 운영.",
     stack: "Next.js · Supabase · Capacitor · MiniMax / Fireworks / Kimi",
     link: "https://household-account-book-tawny.vercel.app",
-    note: "테스트 계정 test@test.com / test1234",
+    note: "데모는 공개 URL에서 이용할 수 있습니다.",
     created: "2025.11",
     updated: "2026-06-24",
   },
@@ -266,7 +266,7 @@ export default function App() {
             율촌·CJ 같은 엔터프라이즈 고객사에 납품하면서 들어오는 실사용 피드백은 가능한 한 SaaS 공통 기능으로 녹여 넣습니다. <span className="text-(--color-ink-3)">(2026.05 기준)</span>
           </p>
           <p className="mb-8 font-mono text-xs text-(--color-ink-3)">
-            데모 · <a className="quill-link" href="https://demo.allibee.ai" target="_blank" rel="noreferrer" aria-label="Business Agent 데모 (새 탭)">demo.allibee.ai</a> · 테스트 계정 dummy@dummy.com / testtest1!
+            데모는 공개 URL <a className="quill-link" href="https://demo.allibee.ai" target="_blank" rel="noreferrer" aria-label="Business Agent 데모 (새 탭)">demo.allibee.ai</a>에서 이용할 수 있습니다.
           </p>
           <ul className="space-y-3 text-[0.98rem] leading-[1.78] text-(--color-ink-2)">
             {bizagent.map((b) => (

@@ -67,7 +67,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 #### Allibee(Business Agent) — 리걸 AI SaaS Frontend · 2024.07 ~ 현재
 
-데모: https://demo.allibee.ai · 테스트 계정 `dummy@dummy.com` / `testtest1!`
+데모는 공개 URL https://demo.allibee.ai에서 이용할 수 있습니다.
 
 - 1개월 PoC로 시작한 리걸 AI 제품의 프론트엔드를 단독 담당하며, 유료 엔터프라이즈 SaaS로 확장되는 과정의 핵심 AI UX 설계·구현
 - 법률 업무의 리서치·문서 확인·출처 검증·문서 생성 과정을 LLM/RAG 기반 워크플로우로 전환하는 사용자 경험 제품화
@@ -120,7 +120,7 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 추가일: 2026-06-02 · 업데이트: 2026-06-24
 
 - 자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅 구현, Origin 검증·rate limit·AES-256-GCM 필드 암호화를 적용해 웹+모바일 단일 코드베이스(Capacitor)로 운영
-- 데모: https://household-account-book-tawny.vercel.app · 테스트 계정 `test@test.com` / `test1234`
+- 데모는 공개 URL https://household-account-book-tawny.vercel.app에서 이용할 수 있습니다.
 
 **dreamrealm** — AI persistent world prototype · TypeScript
 
