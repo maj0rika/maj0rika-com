@@ -259,7 +259,7 @@ export default function App() {
 
         {/* 본업 */}
         <section id="bizagent" className="mx-auto w-full max-w-[860px] px-6 py-24 sm:px-10 sm:py-28">
-          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026-06-18" />
+          <SectionHead chapter="i · 본업" title="Business Agent — 리걸 AI SaaS Frontend" updated="2026-07-20" />
           <p className="mb-3 max-w-[64ch] text-[1.02rem] leading-[1.8] text-(--color-ink-2)">
             BHSN의 리걸 AI 에이전트예요. 2024년 7월부터 프론트엔드를 단독으로 담당해 왔습니다.
             지금은 Agent 단독 유료 구독이 <strong className="font-semibold text-(--color-ink)">329개 워크스페이스</strong> · <strong className="font-semibold text-(--color-ink)">495개 라이선스</strong>. 참고로 Allibee 플랫폼 전체(Agent + CLM)는 누적 가입 <span className="text-(--color-ink-3)">2,767 워크스페이스 · 10,393 계정</span>이고, 위 Agent 숫자는 그중 유료 구독분입니다.

@@ -213,7 +213,7 @@ export default function Hero() {
             BHSN에서 리걸 AI 에이전트 <strong className="doodle-underline font-bold text-(--color-ink)">'Business Agent'</strong> 프론트엔드를 단독으로 담당하고 있어요.
           </p>
           <p className="mt-2">
-            한 달짜리 PoC였는데, 지금은 유료 구독 워크스페이스 <strong className="font-bold text-(--color-ink)">329</strong> · 라이선스 <strong className="font-bold text-(--color-ink)">495</strong> 까지 왔습니다.
+            한 달짜리 PoC였는데, 지금은 유료 구독 워크스페이스 <strong className="font-bold text-(--color-ink)">329</strong> · 라이선스 <strong className="font-bold text-(--color-ink)">495</strong>까지 왔습니다. <span className="text-(--color-ink-3)">(2026.05 기준)</span>
           </p>
           <p className="mt-2">
             AI 도구는 일하다 만지기 시작했는데, 어느 순간 그게 또 일이 돼버렸네요.
