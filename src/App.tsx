@@ -173,12 +173,12 @@ const builds = [
     name: "mac-ai-orphan-cleaner",
     tag: "공개 도구",
     desc:
-      "Codex, Claude Code, Cursor, MCP toolchain이 남긴 macOS AI helper 프로세스를 안전하게 정리하는 Shell 기반 운영 도구.",
+      "고아 MCP·AI 툴체인 헬퍼와 유휴 렌더러 프로세스를 안전 기준을 통과한 경우에만 정리하는 macOS용 Shell 도구.",
     stack: "Shell · macOS · AI Tooling Ops",
     link: "https://github.com/maj0rika/mac-ai-orphan-cleaner",
     note: "공개 GitHub repo 메타데이터 기반으로 추가",
     created: "2026-04",
-    updated: "2026-06-08",
+    updated: "2026-07-15",
   },
   {
     name: "agent-skills",
