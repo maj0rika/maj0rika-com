@@ -122,6 +122,13 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 - 자연어·이미지 기반 소비 내역 입력과 입력 특성별 다중 LLM 라우팅 구현, Origin 검증·rate limit·AES-256-GCM 필드 암호화를 적용해 웹+모바일 단일 코드베이스(Capacitor)로 운영
 - 데모는 공개 URL https://household-account-book-tawny.vercel.app에서 이용할 수 있습니다.
 
+**Vapor UI Compliance Workbench** — 로컬 UI 컴플라이언스 감사 도구 · React · TypeScript · Vapor UI
+
+추가일: 2026-05-27 · 업데이트: 2026-05-27
+
+- 규칙 엔진의 결정론적 검사만으로 PASS/WARN/FAIL을 판정하며, 레이아웃·Vapor 컴포넌트·토큰/스타일·접근성·반응형/테마·코드 품질·문서 준비도의 7개 게이트를 측정
+- GitHub: https://github.com/maj0rika/vapor-compliance-workbench
+
 **dreamrealm** — AI persistent world prototype · TypeScript
 
 추가일: 2026-06-09 · 업데이트: 2026-06-09

@@ -146,7 +146,17 @@ const builds = [
     created: "2025.11",
     updated: "2026-06-24",
   },
-
+  {
+    name: "Vapor UI Compliance Workbench",
+    tag: "공개 도구",
+    desc:
+      "규칙 엔진의 결정론적 검사만으로 PASS/WARN/FAIL을 판정하며, 레이아웃·Vapor 컴포넌트·토큰/스타일·접근성·반응형/테마·코드 품질·문서 준비도의 7개 게이트를 측정하는 로컬 UI 컴플라이언스 감사 도구.",
+    stack: "React · TypeScript · Vite · Vapor UI · Tailwind CSS v4",
+    link: "https://github.com/maj0rika/vapor-compliance-workbench",
+    note: "공개 GitHub README 기반으로 추가",
+    created: "2026-05-27",
+    updated: "2026-05-27",
+  },
   {
     name: "dreamrealm",
     tag: "공개 실험",
