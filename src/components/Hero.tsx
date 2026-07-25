@@ -6,11 +6,11 @@ const CYCLE_MS = 5000;
 type Variant = { pre: string; post: string; lang?: "ko" | "en" };
 
 const VARIANTS: Variant[] = [
-  { pre: "리걸 AI 만들다 보니", post: " 도 4년차예요." },
-  { pre: "한 달 PoC라더니, 4년째", post: " 와 굴리는 중." },
-  { pre: "Svelte 잘 합니다.", post: " 가 React 가자고 해서요." },
+  { pre: "리걸 AI 만들다 보니", post: "도 4년차예요." },
+  { pre: "한 달 PoC라더니, 4년째", post: "와 굴리는 중." },
+  { pre: "Svelte 잘 합니다.", post: "가 React 가자고 해서요." },
   { pre: "Cursor 깔러 갔다가, MCP 서버 만들고 왔어요", post: "." },
-  { pre: "AI가 끝냈다고요? 저는", post: " 로 다시 봅니다." },
+  { pre: "AI가 끝냈다고요? 저는", post: "로 다시 봅니다." },
   { pre: "법령 출처 안 달면 변호사가 안 써요", post: "." },
   { pre: "AX Frontend, Seoul", post: " — since 2019.", lang: "en" },
 ];
@@ -93,7 +93,7 @@ export default function Hero() {
           >
             <h1 aria-live="polite" aria-atomic="true">
               <span className="sr-only">
-                {current.pre} 마조리카 {current.post}
+                {current.pre} 마조리카{current.post}
               </span>
             </h1>
             <AnimatePresence mode="wait" initial={false}>
