@@ -4,7 +4,7 @@
 
 neu5563@naver.com · 010-2243-8353 · https://maj0rika.com · GitHub [@maj0rika](https://github.com/maj0rika)
 
-업데이트: 2026-07-14
+업데이트: 2026-07-23
 
 ---
 
@@ -14,14 +14,14 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 - **AI 제품 UX** — BHSN 리걸 AI SaaS Business Agent(Allibee) 프론트엔드를 단독 담당. 실시간 챗·통합 검색·출처 검증·PDF/OCR 뷰어·워크플로우 UX를 1개월 PoC부터 유료 엔터프라이즈 제품까지 제품화
 - **AI-assisted 개발** — Claude Code · Codex · Cursor · MCP로 설계·구현·리뷰·검증 단계를 분리한 개발 체계를 직접 구성·운영
-- **Knowledge Ops** — Hermes 세션 검색·스킬·크론·사용자 KB를 활용해 여러 기기/에이전트 간 컨텍스트를 이어가되, 공개 가능한 요약과 민감 원문을 분리. contract-first QA와 filesystem evidence, task-size routing, cross-device mistake immunity를 운영 원칙으로 둠
+- **Knowledge Ops** — 공개 가능한 요약과 민감 원문을 분리하고, 여러 기기·에이전트 작업에서도 검증 가능한 컨텍스트 운영 원칙을 적용.
 - **현재** — SvelteKit 프로덕션 경험이 가장 깊고, 운영 제품의 React + Vite + Turborepo 전환을 진행 중
 
 ---
 
 ## 핵심 성과
 
-- 리걸 AI 에이전트 **Business Agent**의 프론트엔드를 단독 담당해 LLM 챗 · RAG 검색 · 출처 검증 · 문서 뷰어 · 워크플로우 UX를 제품화 — **Agent 단독 유료 구독 329개 워크스페이스 · 495개 라이선스** 규모 확보 *(2026-05-20 기준)*
+- 리걸 AI 에이전트 **Business Agent**의 프론트엔드를 단독 담당해 LLM 챗 · RAG 검색 · 출처 검증 · 문서 뷰어 · 워크플로우 UX를 제품화 — **해당 Agent는 유료 구독 329개 워크스페이스 · 495개 라이선스 규모로 운영.** *(2026-05-20 기준)*
 - Agent가 속한 **Allibee 플랫폼**(Business Agent + CLM)은 누적 가입 워크스페이스 **2,767** · 계정 **10,393** 규모로 운영되며 (Agent 유료 구독분은 위 숫자), 율촌·CJ 등 엔터프라이즈 고객사 납품 과정에서 얻은 **실사용 피드백을 SaaS 공통 제품 기능으로 반영**해 현장 요구를 제품 개선으로 연결
 - SSE 기반 LLM 스트리밍과 사내 REF 링크 규격, Markdown tokenizer 확장으로 답변·출처·원문 조항을 연결하는 **출처 검증형 RAG UX** 구현
 - Claude Code · Codex · Cursor · MCP 기반 **AI-assisted 개발 체계**를 구성해 설계·구현·리뷰·검증 단계를 분리 운영
