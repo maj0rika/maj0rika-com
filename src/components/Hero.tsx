@@ -12,7 +12,7 @@ const VARIANTS: Variant[] = [
   { pre: "Cursor 깔러 갔다가, MCP 서버 만들고 왔어요", post: "." },
   { pre: "AI가 끝냈다고요? 저는", post: "로 다시 봅니다." },
   { pre: "법령 출처 안 달면 변호사가 안 써요", post: "." },
-  { pre: "AX Frontend, Seoul", post: " — since 2019.", lang: "en" },
+  { pre: "Software Engineer, Seoul", post: " — since 2019.", lang: "en" },
 ];
 
 export default function Hero() {
