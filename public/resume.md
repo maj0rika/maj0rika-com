@@ -145,9 +145,10 @@ LLM/RAG 기반 엔터프라이즈 SaaS의 사용자 경험과 AI-assisted 개발
 
 **mac-ai-orphan-cleaner** — macOS AI helper cleanup · Shell · AI Tooling Ops
 
-추가일: 2026-06-08 · 업데이트: 2026-07-15
+추가일: 2026-06-08 · 업데이트: 2026-08-08
 
 - 고아 MCP·AI 툴체인 헬퍼와 유휴 렌더러 프로세스를 안전 기준을 통과한 경우에만 정리하는 macOS용 Shell 도구
+- 단일 상태값 대신 부모 체인·실행 경로·누적 CPU 변화 등 복수 조건을 함께 확인해 오탐 정리를 줄이는 방향으로 안전 기준을 보강
 - GitHub: https://github.com/maj0rika/mac-ai-orphan-cleaner
 
 **agent-skills** — AI coding agent engineering playbook · Shell · Agent Workflow

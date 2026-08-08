@@ -183,12 +183,12 @@ const builds = [
     name: "mac-ai-orphan-cleaner",
     tag: "공개 도구",
     desc:
-      "고아 MCP·AI 툴체인 헬퍼와 유휴 렌더러 프로세스를 안전 기준을 통과한 경우에만 정리하는 macOS용 Shell 도구.",
+      "고아 MCP·AI 툴체인 헬퍼와 유휴 렌더러 프로세스를 안전 기준을 통과한 경우에만 정리하는 macOS용 Shell 도구. 단일 상태값 대신 부모 체인·실행 경로·누적 CPU 변화 등 복수 조건을 함께 확인해 오탐 정리를 줄이는 방향으로 안전 기준을 보강합니다.",
     stack: "Shell · macOS · AI Tooling Ops",
     link: "https://github.com/maj0rika/mac-ai-orphan-cleaner",
     note: "공개 GitHub repo 메타데이터 기반으로 추가",
     created: "2026-04",
-    updated: "2026-07-15",
+    updated: "2026-08-08",
   },
   {
     name: "agent-skills",
